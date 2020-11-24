@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <!-- Welcome overlay effect -->
+    <script type="text/javascript" src="js/welcome-overlay-effect.js" async></script>
     <!-- Import Nav-Bar effect -->
     <script type="text/javascript" src="js/interactive-timeline.js" async></script>
      <!-- Import Nav-Bar effect -->
@@ -16,16 +18,16 @@
 <main>
     <navbar id="navbar">
         <ul id="nav-list">
-            <li class="slide-top">
+            <li>
                 <a id="welcomeLink" class="nav-link" href="#welcome-section">WELCOME</a>
             </li>
-            <li class="slide-top">
+            <li>
                 <a id="profileLink" class="nav-link" href="#profile-section">PROFILE</a>
             </li>
-            <li class="slide-top">
+            <li>
                 <a id="skillLink" class="nav-link" href="#skill-section">SKILLS</a>
             </li>
-            <li class="slide-top"> 
+            <li> 
                 <a id="projectsLink" class="nav-link" href="#projects-section">PROJECTS</a>
             </li>
         </ul>
@@ -36,7 +38,8 @@
             Your browser does not support HTML5 video.
         </video>
         <div id="welcome-overlay">
-            <h1 id="welcome-headline">I am the best combination of <br> programming and music</h1>
+            <h1 id="welcome-headline">I am the best combination of programming and music</h1>
+            <div id="triangle-right" class="bounce-triangle"></div>
         </div>
     </section>
     <section class="section-cards" id="profile-section">
