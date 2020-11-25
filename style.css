@@ -20,7 +20,7 @@ main {
   width: 100%;
 }
 
-h1, h2, h3, p, q, button, .project-text{
+h1, h2, h3, p, q, span, button, .project-text, #cursor{
   font-family: 'Space Grotesk', sans-serif;
 }
 
@@ -190,21 +190,26 @@ h3 {
   text-shadow: 0px 0px 8px rgb(0, 0, 0);
 }
 
-#typewriter, cursor {
+#cursor {
   color: white;
-  z-index: 1;
+  word-wrap: normal;
+  font-weight: 700;
+  font-size: 4em;
+  
 }
 
 .blinking-cursor {
-    animation: 0.5s blink step-end infinite;
+    animation: 0.7s blink step-end infinite;
   }
   
   @keyframes blink {
     from, to {
       color: transparent;
+      text-shadow: 0;
     }
     50% {
-      color: rgba(63,63,67,1);
+      color: white;
+      text-shadow: 0px 0px 8px rgb(0, 0, 0);
     }
 }
 

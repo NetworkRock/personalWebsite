@@ -1,5 +1,6 @@
 var startOverlay = document.getElementById('start-overlay');
 var welcomeHeadline = document.getElementById('welcome-headline');
+var cursor = document.getElementById('cursor');
 var navBar = document.getElementById('navbar');
 var welcomeLink = document.getElementById('welcomeLink');
 
@@ -15,5 +16,6 @@ startOverlay.onclick = function(){
         navBar.classList.add('fade-in');
         startOverlay.classList.add('slide-to-right');
         welcomeHeadline.classList.add('fade-out');
+        cursor.classList.add("fade-out");
     }
 }

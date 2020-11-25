@@ -15,11 +15,13 @@ var letterCounter = 0;
 var nextTextObject = textsIterator.next();
 // Word counter
 var wordCounter = 1;
+// Pause Boolean
+var pauseWriting = true;
 
 writing();
 
 function writing() {
-    setTimeout(() => {
+    setTimeout(async () => {
         if (!nextTextObject.done) {
             if (this.letterCounter < nextTextObject.value.length && !deleteMode) {
                 typingLetters();
@@ -28,7 +30,11 @@ function writing() {
                     getNextText();
                     this.deleteMode = false;
                 } else {
-                    if(!(wordCounter >= textsToType.length)) {
+                    if (!(wordCounter >= textsToType.length)) {
+                        // Pause a bit before continue writing
+                        if (this.pauseWriting) {
+                            await pauseBeforeNextWord();
+                        }
                         deletingLetters();
                     } else {
                         textsIterator.next();
@@ -51,10 +57,19 @@ function deletingLetters() {
     this.elementToTypewrite.removeChild(this.elementToTypewrite.childNodes[this.letterCounter]);
 }
 
+function pauseBeforeNextWord() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            this.pauseWriting = false;
+            resolve();
+        }, 1000)
+    });
+}
+
 function getNextText() {
-        console.log("GET NEXT TEXT");
-        this.nextTextObject = textsIterator.next();
-        this.letterCounter = 0;
-        this.wordCounter++;
+    this.nextTextObject = textsIterator.next();
+    this.letterCounter = 0;
+    this.wordCounter++;
+    this.pauseWriting = true;
 }
 
