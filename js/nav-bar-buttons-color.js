@@ -11,20 +11,12 @@ var threeCircle = document.querySelectorAll('.fill-up-three-circles');
 var twoCircle = document.querySelectorAll('.fill-up-two-circles');
 var oneCircle = document.querySelectorAll('.fill-up-one-circle');
 
-// Set the active link to welcome when the site first time loaded
-window.addEventListener("load", () => {
-    if (location.hash.length === 0) {
-        welcomeLink.classList.add("nav-link-active");
-    }
-})
-
 function resetByLocationChanged() {
     // Remove all classes on links
     profileLink.classList.remove("nav-link-active");
     skillLink.classList.remove("nav-link-active");
     projectsLink.classList.remove("nav-link-active");
     welcomeLink.classList.remove("nav-link-active");
-    document.getElementById('welcome-headline').style.display = "none";
     // Resest Skill Animation
     for (var i = 0; i < fiveCircle.length; i++) {
         fiveCircle[i].classList.remove("circle-animation");
@@ -43,6 +35,9 @@ function resetByLocationChanged() {
     }
 }
 
+if (location.hash.length === 0) {
+    welcomeLink.classList.add("nav-link-active");
+}
 
 function locationHashChanged() {
     console.log("test");
@@ -55,7 +50,7 @@ function locationHashChanged() {
 
         // Continue the video
         document.getElementById('myVideo').play();
-        document.getElementById('welcome-headline').style.display = "inline";
+
     }
     else if (location.hash === '#profile-section') {
         // Set the active class for the active location
