@@ -1,14 +1,19 @@
 var startOverlay = document.getElementById('start-overlay');
 var welcomeHeadline = document.getElementById('welcome-headline');
 var navBar = document.getElementById('navbar');
-var triangleRight = document.getElementById('triangle-right');
 var welcomeLink = document.getElementById('welcomeLink');
 
+
+document.getElementById("myVideo").currentTime = 0;
+document.getElementById('myVideo').pause();
+
+
+
 startOverlay.onclick = function(){
+    document.getElementById('myVideo').play();
     if (!startOverlay.classList.contains('slide-to-right')) {
         navBar.classList.add('fade-in');
         startOverlay.classList.add('slide-to-right');
         welcomeHeadline.classList.add('fade-out');
-        triangleRight.classList.add('fade-out');
     }
 }
