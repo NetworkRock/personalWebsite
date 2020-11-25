@@ -1,5 +1,5 @@
 // Which texts should be written to the headline?
-var textsToType = ["Hi, my name is Robin", "I am the best combination of programming and music", "Check out my projects!"];
+var textsToType = ["Hi, my name is Robin", "I am the best combination of programming and music", "Click the mouse to check out my projects!"];
 // Get the elment in which the text should go
 var elementToTypewrite = document.getElementById('welcome-headline');
 // Get the couror element
@@ -43,7 +43,7 @@ function writing() {
             }
             writing();
         }
-    }, 100);
+    }, 80);
 }
 
 function typingLetters() {
@@ -62,7 +62,7 @@ function pauseBeforeNextWord() {
         setTimeout(() => {
             this.pauseWriting = false;
             resolve();
-        }, 1000)
+        }, 2000)
     });
 }
 
