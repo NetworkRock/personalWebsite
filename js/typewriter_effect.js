@@ -1,5 +1,5 @@
 // Which texts should be written to the headline?
-var textsToType = ["Hi, my name is Robin", "I am the best combination of programming and music", "Click the mouse to check out my projects!"];
+var textsToType = ["Hi, my name is Robin", "I am the best combination of programming and music", "Click to check out my projects!"];
 // Get the elment in which the text should go
 var elementToTypewrite = document.getElementById('welcome-headline');
 // Get the couror element
