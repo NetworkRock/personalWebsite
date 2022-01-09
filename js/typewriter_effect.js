@@ -39,6 +39,7 @@ function writing() {
           }
           deletingLetters();
         } else {
+          await pauseBeforeStartAnimation();
           navBar.classList.add("fade-in");
           startOverlay.classList.add("slide-to-right");
           welcomeHeadline.classList.add("fade-out");
@@ -70,6 +71,14 @@ function pauseBeforeNextWord() {
       this.pauseWriting = false;
       resolve();
     }, 2000);
+  });
+}
+
+function pauseBeforeStartAnimation() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 900);
   });
 }
 
