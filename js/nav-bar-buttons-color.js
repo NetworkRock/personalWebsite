@@ -1,99 +1,63 @@
-// Get all links
-var welcomeLink = document.getElementById('welcomeLink');
-var profileLink = document.getElementById('profileLink');
-var skillLink = document.getElementById('skillLink');
-var projectsLink = document.getElementById('projectsLink');
+// Navigation Links Key Map
+const navigationLinks = {
+  "#welcome-section": document.getElementById("welcomeLink"),
+  "#profile-section": document.getElementById("profileLink"),
+  "#skill-section": document.getElementById("skillLink"),
+  "#projects-section": document.getElementById("projectsLink"),
+};
 
-// Skill circles container
-var fiveCircle = document.querySelectorAll('.fill-up-five-circles');
-var fourCircle = document.querySelectorAll('.fill-up-four-circles');
-var threeCircle = document.querySelectorAll('.fill-up-three-circles');
-var twoCircle = document.querySelectorAll('.fill-up-two-circles');
-var oneCircle = document.querySelectorAll('.fill-up-one-circle');
+// Skill circle map
+const skillCirclesMap = [
+  document.querySelectorAll(".fill-up-five-circles"),
+  document.querySelectorAll(".fill-up-four-circles"),
+  document.querySelectorAll(".fill-up-three-circles"),
+  document.querySelectorAll(".fill-up-two-circles"),
+  document.querySelectorAll(".fill-up-one-circle"),
+];
 
-function resetByLocationChanged() {
-    // Remove all classes on links
-    profileLink.classList.remove("nav-link-active");
-    skillLink.classList.remove("nav-link-active");
-    projectsLink.classList.remove("nav-link-active");
-    welcomeLink.classList.remove("nav-link-active");
-    // Resest Skill Animation
-    for (var i = 0; i < fiveCircle.length; i++) {
-        fiveCircle[i].classList.remove("circle-animation");
-    }
-    for (var i = 0; i < fourCircle.length; i++) {
-        fourCircle[i].classList.remove("circle-animation");
-    }
-    for (var i = 0; i < threeCircle.length; i++) {
-        threeCircle[i].classList.remove("circle-animation");
-    }
-    for (var i = 0; i < twoCircle.length; i++) {
-        twoCircle[i].classList.remove("circle-animation");
-    }
-    for (var i = 0; i < oneCircle.length; i++) {
-        oneCircle[i].classList.remove("circle-animation");
-    }
+function init() {
+  if (location.hash.length === 0) {
+    writing();
+    welcomeLink.classList.add("nav-link-active");
+  } else {
+    navBar.style.opacity = 1;
+    startOverlay.style.width = "6vw";
+    startOverlay.style.backgroundColor = "rgba(63,63,67,1)";
+    welcomeHeadline.style.opacity = 0;
+    cursor.style.opacity = 0;
+  }
 }
 
-if (location.hash.length === 0) {
-    welcomeLink.classList.add("nav-link-active");
+function resetByLocationChanged() {
+  // Remove class for active link on every link
+  Object.values(navigationLinks).forEach((linkElement) => {
+    linkElement.classList.remove("nav-link-active");
+  });
+  // Remoce circle animation on all circleElements
+  skillCirclesMap.forEach((circleElement) => {
+    for (var i = 0; i < circleElement.length; i++) {
+      circleElement[i].classList.remove("circle-animation");
+    }
+  });
 }
 
 function locationHashChanged() {
-    console.log("test");
-    // Reset first - then overwrite
-    resetByLocationChanged();
-
-    if (location.hash === '#welcome-section') {
-        // Set the active class for the active location
-        welcomeLink.classList.add("nav-link-active");
-
-        // Continue the video
-        document.getElementById('myVideo').play();
-
-    }
-    else if (location.hash === '#profile-section') {
-        // Set the active class for the active location
-        profileLink.classList.add("nav-link-active");
-
-        // Pause the video on a specific time
-        document.getElementById("myVideo").currentTime = 0.15;
-        document.getElementById('myVideo').pause();
-
-
-    } else if (location.hash === '#skill-section') {
-        // Set the active class for the active location
-        skillLink.classList.add("nav-link-active");
-
-        // Pause the video on a specific time
-        document.getElementById("myVideo").currentTime = 4.00;
-        document.getElementById('myVideo').pause();
-
-
-        // Add the animtaion class for every circle container
-        for (var i = 0; i < fiveCircle.length; i++) {
-            fiveCircle[i].classList.add("circle-animation");
-        }
-        for (var i = 0; i < fourCircle.length; i++) {
-            fourCircle[i].classList.add("circle-animation");
-        }
-        for (var i = 0; i < threeCircle.length; i++) {
-            threeCircle[i].classList.add("circle-animation");
-        }
-        for (var i = 0; i < twoCircle.length; i++) {
-            twoCircle[i].classList.add("circle-animation");
-        }
-        for (var i = 0; i < oneCircle.length; i++) {
-            oneCircle[i].classList.add("circle-animation");
-        }
-    }
-    else if (location.hash === '#projects-section') {
-        // Set the active class for the active location
-        projectsLink.classList.add("nav-link-active");
-
-        // Pause the video on a specific time
-        document.getElementById("myVideo").currentTime = 7.13;
-        document.getElementById('myVideo').pause();
-    }
+  resetByLocationChanged();
+  // Adding the background color for the current selected nav link
+  navigationLinks[
+    Object.keys(navigationLinks).find(
+      (linkElement) => linkElement === location.hash
+    )
+  ].classList.add("nav-link-active");
+  // Add the circle animation
+  if (location.hash === "#skill-section") {
+    skillCirclesMap.forEach((circleElement) => {
+      for (var i = 0; i < circleElement.length; i++) {
+        circleElement[i].classList.add("circle-animation");
+      }
+    });
+  }
 }
+
 window.onhashchange = locationHashChanged;
+window.onload = init;
