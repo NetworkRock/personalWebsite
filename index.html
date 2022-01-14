@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Typewriter -->
     <script type="text/javascript" src="js/typewriter_effect.js" async></script>
     <!-- Import Nav-Bar effect -->
@@ -31,7 +32,9 @@
         <ul id="nav-list">
           <li>
             <a id="welcomeLink" class="nav-link" href="#welcome-section"
-              >WELCOME</a
+              >WELCOME
+              <img id="menuIcon" class="nav-link" src="./images/menu.png"/>
+              </a
             >
           </li>
           <li>
@@ -50,8 +53,25 @@
         </ul>
       </navbar>
       <section class="section-cards" id="welcome-section">
-        <div id="backgroundImage"></div>
-        <div id="background-overlay"></div>
+        <div id="backgroundImage">
+          
+        </div>
+        <div id="background-overlay">
+          <ul id="socialSites">
+            <li>
+              <img class="logo" src="./images/githubLogo.png"/>
+              <a href="https://github.com/NetworkRock">https://github.com/NetworkRock</a>
+            </li>
+            <li>
+              <img class="logo" src="./images/linkedInLogo.png"/>
+              <a href="https://www.linkedin.com/in/robin-leeb-838746208/">https://www.linkedin.com/in/robin-leeb-838746208/</a>
+            </li>
+            <li>
+              <img class="logo" src="./images/freeCodeCampLogo.png" style="margin-top: 4px;"/>
+              <a href="https://www.freecodecamp.org/networkrocker">https://www.freecodecamp.org/networkrocker</a>
+            </li>
+          </ul>
+        </div>
         <div id="start-overlay">
           <span>
             <span id="welcome-headline" class="headline"></span>
@@ -66,12 +86,10 @@
             <img id="profile-picture" src="images/profile-picture.png" />
           </div>
           <div id="about-me-info">
-            <h2>About me</h2>
             <p>
-              <strong>Name: </strong>Robin Leeb<br />
-              <strong>Birthdate: </strong>04.10.1993<br />
-              <strong>Degree:</strong><br />Bachelor of Science (Mobile
-              Media)<br />
+              <strong>Name: </strong><br />Robin Leeb<br />
+              <strong>Birthdate: </strong><br />04.10.1993<br />
+              <strong>Degree:</strong><br />Bachelor of Science<br />
               <strong>Languages:</strong><br />German (mother tongue)<br />English
               (fluent)
             </p>

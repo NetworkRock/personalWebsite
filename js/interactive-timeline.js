@@ -15,9 +15,6 @@ for (var i = 0; i < this.flipCard.length; i++) {
   }
   timelineItems[i].addEventListener("click", (click) => {
     for (card of this.flipCard) {
-      console.log(card.getAttribute("id"));
-      console.log(click.target.getAttribute("id"));
-
       if (card.getAttribute("id") === click.target.getAttribute("id")) {
         card.setAttribute("style", "display:inline");
         card.classList.add("slide-in-fwd-center");

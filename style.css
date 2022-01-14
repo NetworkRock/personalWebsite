@@ -20,24 +20,28 @@ main {
   width: 100%;
 }
 
-h1, h2, h3, p, q, span, button, .project-text, #cursor{
+h1, h2, h3, p, q, a, span, button, .project-text, #cursor{
   font-family: 'Space Grotesk', sans-serif;
 }
 
 h1 {
-  font-size: 2vw;
+  font-size: 6vw;
   font-weight: 200;
   color: white;
 }
 
 h2 {
-  font-size: 1vw;
+  font-size: 3vw;
   font-weight: 500;
   color: #27a594;
 }
 
 h3 {
   font-size: 1vw;
+}
+
+p, i {
+  font-size: 2.3vw;
 }
 
 
@@ -54,9 +58,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: 6vw;
-  top: 3vw;
-  left: 94vw;
+  width: 100%;
   opacity: 0;
 
 }
@@ -65,19 +67,25 @@ h3 {
   flex-direction: column;
   align-items: center;
   list-style-type: none;
+  width: 100%;
   margin: 0px;
   padding: 0px;
   font-family: 'Space Grotesk', sans-serif;
 }
 #nav-list li, .nav-link {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 6em;
-  width: 6vw;
+  height: 1em;
+  width: 100%;
+  padding: 5px;
   background: rgba(63,63,67,1);
   text-decoration: none;
   color: white;
+}
+
+#menuIcon {
+  width: 2em;
 }
 
 #nav-list li, .nav-link:hover {
@@ -134,8 +142,6 @@ h3 {
   width: 100%;
 }
 
-
-
 /* 
  * ----------------------------------------------
  * - WELCOME SECTION -
@@ -151,7 +157,6 @@ h3 {
   min-height: 100%;
   background-image: url(./images/profile-picture-background.jpg);
   background-size: cover;
-  background-position-y: -100px;
 }
 
 #welcome-section {
@@ -172,11 +177,12 @@ h3 {
   /*background-color: rgb(120 120 120 / 50%);*/
   background-color: rgba(63,63,67,0.8);
 }
+
 #background-overlay {
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex: 1;
   width: 100%;
@@ -184,11 +190,48 @@ h3 {
   background-color: rgb(120 120 120 / 70%);
 }
 
+#socialSites {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  word-break: break-word;
+  list-style: none;
+  padding: 0;
+}
+
+#socialSites li {
+  display: flex;
+  align-items: center;
+}
+
+#socialSites a {
+  font-weight: bolder;
+  text-decoration: none;
+  color: white;
+  text-shadow: 0px 0px 8px rgb(0, 0, 0);
+}
+#socialSites a:hover{
+  color: black;
+  text-shadow: 0px 0px 18px #000000;
+}
+
+#socialSites a:visited{
+  color: white;
+  text-shadow: 0px 0px 8px rgb(0, 0, 0);
+}
+
+.logo {
+  padding: 1em;
+  width: 3em;
+  height: auto;
+  align-self: flex-start;
+}
+
 #welcome-headline {
   color: white;
   word-wrap: normal;
   font-weight: 700;
-  font-size: 4em;
+  font-size: 4vw;
   white-space: pre-wrap;
   text-shadow: 0px 0px 8px rgb(0, 0, 0);
 }
@@ -197,7 +240,7 @@ h3 {
   color: white;
   word-wrap: normal;
   font-weight: 700;
-  font-size: 4em;
+  font-size: 4vw;
   
 }
 
@@ -227,7 +270,7 @@ h3 {
     width: 100%;
   }
   100% {
-    width: 6vw;
+    width: 0vw;
     background-color: rgba(63,63,67,1);
   }
 }
@@ -236,11 +279,10 @@ h3 {
     width: 100%;
   }
   100% {
-    width: 6vw;
+    width: 0vw;
     background-color: rgba(63,63,67,1);
   }
 }
-
 
 
 /* Animation for fade out the headline text */
@@ -263,10 +305,6 @@ h3 {
   }
 }
 
-
-
-
-
 /* 
  * ----------------------------------------------
  * - PROFILE SECTION -
@@ -284,7 +322,7 @@ h3 {
   flex:1;
   flex-direction: row;
   align-items: center;
-  width: 50%;
+  width: 100%;
   background-color: white;
 }
 
@@ -296,12 +334,13 @@ h3 {
 }
 
 #profile-picture {
-  width: 10em;
+  width: 25vw;
   height: auto;
 }
 
 #about-me-info {
   flex: 1;
+  text-align: center;
 }
 
 #my-quote {
@@ -313,7 +352,7 @@ h3 {
   display: flex;
   justify-content: center;
   flex:1.5;
-  width: 50%;
+  width: 100%;
 }
 
 #clickable-timeline-container {
@@ -422,7 +461,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   background-color: rgba(63,63,67,1);
-  width: 50%;
+  width: 100%;
 }
 
 #it-skills {
@@ -442,16 +481,6 @@ h3 {
 
 .skill-grid-item {
   display: flex;
-}
-
-#skill-link {
-  margin-bottom: 4%;
-  padding: 2%;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  font-size: 30px;
-  font-family: 'Space Grotesk', sans-serif;
 }
 
 #skill-list {
@@ -563,7 +592,7 @@ h3 {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 1%;
-  width: 50%;
+  width: 90%;
   height: 80%;
   background-color: transparent;
 }
@@ -602,7 +631,6 @@ h3 {
 }
 .project-text {
   color: white;
-  font-size: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -637,6 +665,79 @@ h3 {
   }
 }
 
+/* 
+ * ----------------------------------------------
+ * - MEDIA QUERIES -
+ * ---------------------------------------------- 
+ */
+
+ /* If screen size is more than 900px wide */
+ @media screen and (min-width: 900px) {
+  h1 {
+    font-size: 2vw;
+  }
+  h2 {
+    font-size: 1vw;
+  }
+  p, i {
+    font-size: 0.9vw;
+  }
+  #navbar {
+    width: 6vw;
+    top: 3vw;
+    left: 94vw;
+  }
+  #nav-list {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  #nav-list li, .nav-link {
+    display: flex;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    height: 6em;
+    width: 6vw;
+  }
+  #menuIcon {
+    display: none;
+  }
+  #background-overlay {
+    justify-content: center;
+  }
+  #socialSites {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 85vh;
+    margin-right: 6vw;
+  }
+  #socialSites a {
+    font-size: 1vw;
+  }
+  #background-image {
+    background-position-y: -100px;
+  }
+  #interactive-cv {
+    width: 50%;
+  }
+  #skill-section {
+    width: 50%;
+  }
+  #profile-section-container {
+    width: 50%;
+  }
+  #profile-picture {
+    width: 10vw;
+    height: auto;
+  }
+  .projects-grid {
+    width: 50%;
+  }
+}
+ 
 
 
 
