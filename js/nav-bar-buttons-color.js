@@ -19,8 +19,6 @@ const skillCirclesMap = [
 ];
 
 function init() {
-  // Disallow landscape mode
-  screen.orientation.lock('portrait');
   if (location.hash.length === 0) {
     writing();
     welcomeLink.classList.add("nav-link-active");

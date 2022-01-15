@@ -11,7 +11,7 @@ body {
   margin: 0px;
   padding: 0px;
   scroll-behavior: smooth;
-  overflow: hidden;
+  overflow: scroll;
 }
 main {
   display: flex;
@@ -421,12 +421,15 @@ p, i {
   width: 100%;
   height: 100%;
   text-align: center;
+  -webkit-transition: transform 0.6s;
   transition: transform 0.6s;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .flip-card:hover .flip-card-inner {
+  -webkit-transform: rotate(180deg);
   transform: rotateX(180deg);
 }
 
@@ -450,6 +453,7 @@ p, i {
 .flip-card-back {
   background-color: rgba(63,63,67,1);
   color: white;
+  -webkit-transform: rotate(180deg);
   transform: rotateX(180deg);
 }
 
@@ -565,6 +569,7 @@ p, i {
 
 
 .circle-animation {
+  -webkit-animation: fillUp 1.0s ease-in 0.4s 1;
   animation: fillUp 1.0s ease-in 0.4s 1;
 }
 
