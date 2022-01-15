@@ -3,10 +3,10 @@ const isDesktop = window.matchMedia("screen and (min-width: 900px)").matches;
 
 // Navigation Links Key Map
 const navigationLinks = {
-  "#welcome-section": document.getElementById("welcomeLink"),
-  "#profile-section": document.getElementById("profileLink"),
-  "#skill-section": document.getElementById("skillLink"),
-  "#projects-section": document.getElementById("projectsLink"),
+  "#welcome": document.getElementById("welcomeLink"),
+  "#profile": document.getElementById("profileLink"),
+  "#skill": document.getElementById("skillLink"),
+  "#projects": document.getElementById("projectsLink"),
 };
 
 // Skill circle map
@@ -19,6 +19,8 @@ const skillCirclesMap = [
 ];
 
 function init() {
+  // Disallow landscape mode
+  screen.orientation.lock();
   if (location.hash.length === 0) {
     writing();
     welcomeLink.classList.add("nav-link-active");
@@ -53,7 +55,7 @@ function locationHashChanged() {
     )
   ].classList.add("nav-link-active");
   // Add the circle animation
-  if (location.hash === "#skill-section") {
+  if (location.hash === "#skill") {
     skillCirclesMap.forEach((circleElement) => {
       for (var i = 0; i < circleElement.length; i++) {
         circleElement[i].classList.add("circle-animation");

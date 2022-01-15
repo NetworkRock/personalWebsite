@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Mobil settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Typewriter -->
     <script type="text/javascript" src="js/typewriter_effect.js" async></script>
@@ -17,7 +18,7 @@
       async
     ></script>
     <!-- Import stylesheet -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -31,17 +32,17 @@
       <navbar id="navbar">
         <ul id="nav-list">
           <li>
-            <a id="welcomeLink" class="nav-link" href="#welcome-section">WELCOME</a>
+            <a id="welcomeLink" class="nav-link" href="#welcome">WELCOME</a>
           </li>
           <li>
-            <a id="profileLink" class="nav-link" onclick="triggerNavigation()" href="#profile-section">PROFILE</a
+            <a id="profileLink" class="nav-link" onclick="triggerNavigation()" href="#profile">PROFILE</a
             >
           </li>
           <li>
-            <a id="skillLink" class="nav-link" onclick="triggerNavigation()" href="#skill-section">SKILLS</a>
+            <a id="skillLink" class="nav-link" onclick="triggerNavigation()" href="#skill">SKILLS</a>
           </li>
           <li>
-            <a id="projectsLink" class="nav-link" onclick="triggerNavigation()" href="#projects-section">PROJECTS</a
+            <a id="projectsLink" class="nav-link" onclick="triggerNavigation()" href="#projects">PROJECTS</a
             >
           </li>
         </ul>
@@ -49,7 +50,7 @@
           <img id="menu-icon" class="nav-link" onclick="triggerNavigation()" src="./images/menu.png"/>
         </div>
       </navbar>
-      <section class="section-cards" id="welcome-section">
+      <section class="section-cards" id="welcome">
         <div id="backgroundImage">
           
         </div>
@@ -76,7 +77,7 @@
           </span>
         </div>
       </section>
-      <section class="section-cards" id="profile-section">
+      <section class="section-cards" id="profile">
         <h1>Interactive CV</h1>
         <div id="profile-section-container">
           <div id="profile-picture-container">
@@ -104,22 +105,18 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <h1>BIZERBA GmbH & Co. KG</h1>
-                <h2>Softwareentwickler</h2>
+                <h1>YOURCE</h1>
+                <h2>FRONTEND ENGINEER</h2>
               </div>
               <div class="flip-card-back">
-                <h1>Technologien & Anwendungen</h1>
+                <h1>Technologies</h1>
                 <p>VBA (Visual Basic for Applications)</p>
                 <h2>Description</h2>
                 <p>
                   Entwicklung eines Auswertungs- und Aufbereitungsprogramm, in
                   Verbindung mit Excel und der Programmiersprache VBA Anfangs
                   stand eine automatisch generierte Textdatei mit Analysedaten
-                  zur Verfügung, welche von einer Maschine generiert wurde. Die
-                  Daten sollten in Excel mit einem VBA-Programm eingelesen und
-                  danach ausgewertet werden. Im nächsten Schritt erstellte das
-                  Programm mehrere Diagramme und Schaubilder, welche die
-                  Effizienz der Maschine zu gewissen Zeiten zeigte.
+                  zur Verfügung, welche von
                 </p>
               </div>
             </div>
@@ -137,83 +134,6 @@
             </div>
           </div>
 
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h1>Third Cards</h1>
-                <h2>Softwareentwickler</h2>
-              </div>
-              <div class="flip-card-back">
-                <h1>Third Card Back</h1>
-              </div>
-            </div>
-          </div>
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h1>Third Cards</h1>
-                <h2>Softwareentwickler</h2>
-              </div>
-              <div class="flip-card-back">
-                <h1>Third Card Back</h1>
-              </div>
-            </div>
-          </div>
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h1>Third Cards</h1>
-                <h2>Softwareentwickler</h2>
-              </div>
-              <div class="flip-card-back">
-                <h1>Third Card Back</h1>
-              </div>
-            </div>
-          </div>
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h1>Third Cards</h1>
-                <h2>Softwareentwickler</h2>
-              </div>
-              <div class="flip-card-back">
-                <h1>Third Card Back</h1>
-              </div>
-            </div>
-          </div>
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h1>Third Cards</h1>
-                <h2>Softwareentwickler</h2>
-              </div>
-              <div class="flip-card-back">
-                <h1>Third Card Back</h1>
-              </div>
-            </div>
-          </div>
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h1>Third Cards</h1>
-                <h2>Softwareentwickler</h2>
-              </div>
-              <div class="flip-card-back">
-                <h1>Third Card Back</h1>
-              </div>
-            </div>
-          </div>
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h1>Third Cards</h1>
-                <h2>Softwareentwickler</h2>
-              </div>
-              <div class="flip-card-back">
-                <h1>Third Card Back</h1>
-              </div>
-            </div>
-          </div>
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -243,50 +163,10 @@
                 10/2012<br /><br />01/2013
               </button>
             </li>
-
-            <li class="timeline-item">
-              <button class="timeline-link-item">
-                03/2015<br /><br />10/2015
-              </button>
-            </li>
-
-            <li class="timeline-item">
-              <button class="timeline-link-item">
-                03/2016<br /><br />10/2016
-              </button>
-            </li>
-
-            <li class="timeline-item">
-              <button class="timeline-link-item">
-                10/2016<br /><br />03/2017
-              </button>
-            </li>
-            <li class="timeline-item">
-              <button class="timeline-link-item">
-                03/2017<br /><br />10/2017
-              </button>
-            </li>
-            <li class="timeline-item">
-              <button class="timeline-link-item">
-                10/2017<br /><br />03/2018
-              </button>
-            </li>
-
-            <li class="timeline-item">
-              <button class="timeline-link-item">
-                12/2018<br /><br />12/2018
-              </button>
-            </li>
-
-            <li class="timeline-item">
-              <button class="timeline-link-item">
-                12/2018<br /><br />09/2020
-              </button>
-            </li>
           </ul>
         </div>
       </section>
-      <section class="section-cards" id="skill-section">
+      <section class="section-cards" id="skill">
         <h1 id="skill-headline">Skills</h1>
         <section id="it-skills">
           <h2>Frontend-Skills</h2>
@@ -595,7 +475,7 @@
           </div>
         </section>
       </section>
-      <section class="section-cards" id="projects-section">
+      <section class="section-cards" id="projects">
         <h1 class="project-tile">My Projects</h1>
         <div class="projects-grid">
           <div class="project-grid-item">

@@ -1,20 +1,19 @@
-var flipCard = document.getElementsByClassName("flip-card");
-var timelineItems = document.getElementsByClassName("timeline-link-item");
+// Get all cards
+const flipCard = document.getElementsByClassName("flip-card");
 
-var combinedCardItemMap = new Map();
+// Get all timeline items
+const timelineItems = document.getElementsByClassName("timeline-link-item");
 
-var counter = 0;
-
-for (var i = 0; i < this.flipCard.length; i++) {
+for (let i = 0; i < flipCard.length; i++) {
   // Fill the combinded Map
   timelineItems[i].setAttribute("id", i);
-  this.flipCard[i].setAttribute("id", i);
+  flipCard[i].setAttribute("id", i);
   // Set first default card
   if (i === 0) {
-    this.flipCard[i].setAttribute("style", "display:inline");
+    flipCard[i].setAttribute("style", "display:inline");
   }
   timelineItems[i].addEventListener("click", (click) => {
-    for (card of this.flipCard) {
+    for (let card of flipCard) {
       if (card.getAttribute("id") === click.target.getAttribute("id")) {
         card.setAttribute("style", "display:inline");
         card.classList.add("slide-in-fwd-center");

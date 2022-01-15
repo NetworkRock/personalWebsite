@@ -23,6 +23,15 @@ var wordCounter = 1;
 // Pause Boolean
 var pauseWriting = true;
 
+
+
+function startAnimations() {
+  navBar.classList.add("fade-in");
+  startOverlay.classList.add("slide-to-right");
+  welcomeHeadline.classList.add("fade-out");
+  cursor.classList.add("fade-out");
+}
+
 function writing() {
   setTimeout(async () => {
     if (this.letterCounter < nextTextObject.value.length && !deleteMode) {
@@ -40,10 +49,7 @@ function writing() {
           deletingLetters();
         } else {
           await pauseBeforeStartAnimation();
-          navBar.classList.add("fade-in");
-          startOverlay.classList.add("slide-to-right");
-          welcomeHeadline.classList.add("fade-out");
-          cursor.classList.add("fade-out");
+          startAnimations();
         }
       }
     }
