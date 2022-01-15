@@ -12,14 +12,16 @@ for (let i = 0; i < flipCard.length; i++) {
   if (i === 0) {
     flipCard[i].setAttribute("style", "display:inline");
   }
-  timelineItems[i].addEventListener("click", (click) => {
-    for (let card of flipCard) {
-      if (card.getAttribute("id") === click.target.getAttribute("id")) {
-        card.setAttribute("style", "display:inline");
-        card.classList.add("slide-in-fwd-center");
-      } else {
-        card.setAttribute("style", "display:none");
+  ['click', 'touchstart'].forEach((eventType) => {
+    timelineItems[i].addEventListener(eventType, (click) => {
+      for (let card of flipCard) {
+        if (card.getAttribute("id") === click.target.getAttribute("id")) {
+          card.setAttribute("style", "display:inline");
+          card.classList.add("slide-in-fwd-center");
+        } else {
+          card.setAttribute("style", "display:none");
+        }
       }
-    }
-  });
+    });
+  })
 }
