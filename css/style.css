@@ -152,8 +152,8 @@ p, i {
   display: flex;
   background-color: rgba(63,63,67,0.85);
   flex: 1;
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
 }
 
 /* 
