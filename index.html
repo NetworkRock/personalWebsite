@@ -31,26 +31,23 @@
       <navbar id="navbar">
         <ul id="nav-list">
           <li>
-            <a id="welcomeLink" class="nav-link" href="#welcome-section"
-              >WELCOME
-              <img id="menuIcon" class="nav-link" src="./images/menu.png"/>
-              </a
+            <a id="welcomeLink" class="nav-link" href="#welcome-section">WELCOME</a>
+          </li>
+          <li>
+            <a id="profileLink" class="nav-link" onclick="triggerNavigation()" href="#profile-section">PROFILE</a
             >
           </li>
           <li>
-            <a id="profileLink" class="nav-link" href="#profile-section"
-              >PROFILE</a
-            >
+            <a id="skillLink" class="nav-link" onclick="triggerNavigation()" href="#skill-section">SKILLS</a>
           </li>
           <li>
-            <a id="skillLink" class="nav-link" href="#skill-section">SKILLS</a>
-          </li>
-          <li>
-            <a id="projectsLink" class="nav-link" href="#projects-section"
-              >PROJECTS</a
+            <a id="projectsLink" class="nav-link" onclick="triggerNavigation()" href="#projects-section">PROJECTS</a
             >
           </li>
         </ul>
+        <div id="mobile-icon-container">
+          <img id="menu-icon" class="nav-link" onclick="triggerNavigation()" src="./images/menu.png"/>
+        </div>
       </navbar>
       <section class="section-cards" id="welcome-section">
         <div id="backgroundImage">

@@ -1,3 +1,6 @@
+// Detect Desktop devices
+const isDesktop = window.matchMedia("screen and (min-width: 900px)").matches;
+
 // Navigation Links Key Map
 const navigationLinks = {
   "#welcome-section": document.getElementById("welcomeLink"),
@@ -21,7 +24,7 @@ function init() {
     welcomeLink.classList.add("nav-link-active");
   } else {
     navBar.style.opacity = 1;
-    startOverlay.style.width = "6vw";
+    startOverlay.style.width = "0vw";
     startOverlay.style.backgroundColor = "rgba(63,63,67,1)";
     welcomeHeadline.style.opacity = 0;
     cursor.style.opacity = 0;
@@ -61,3 +64,18 @@ function locationHashChanged() {
 
 window.onhashchange = locationHashChanged;
 window.onload = init;
+
+
+
+
+/* Methode for open and close the navigation */
+function triggerNavigation() {
+  var x = document.getElementById("nav-list");
+  if (!isDesktop) {
+    if (x.style.display === "flex") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "flex";
+    }
+  }
+}
