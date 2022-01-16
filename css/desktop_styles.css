@@ -1,0 +1,110 @@
+/* 
+ * ----------------------------------------------
+ * - MEDIA QUERIES -
+ * ---------------------------------------------- 
+ */
+
+ /* If screen size is more than 900px wide */
+ @media screen and (min-width: 900px) {
+  h1 {
+    font-size: 2vw;
+  }
+  h2 {
+    font-size: 1vw;
+  }
+  p, i {
+    font-size: 0.9vw;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-end;
+    width: 6vw;
+    top: 3vw;
+    left: 94vw;
+  }
+  #nav-list {
+    display: flex;
+    margin: 0px;
+    margin-right: 2vw;
+    padding: 0px;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  #nav-list-open {
+    display: flex;
+  }
+  #nav-list li, .nav-link {
+    display: flex;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    height: 6em;
+    width: 6vw;
+  }
+  #mobile-icon-container {
+    display: none;
+  }
+  #background-overlay {
+    justify-content: center;
+  }
+  #socialSites {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    margin-top: 85vh;
+    margin-right: 6vw;
+  }
+  #socialSites a {
+    font-size: 1vw;
+  }
+  #background-image {
+    background-position-y: -100px;
+  }
+  #interactive-cv {
+    flex: 1.5;
+    width: 50vw;
+  }
+  #clickable-timeline-container {
+    width: 50vw;
+  }
+  #clickable-timeline {
+    height: 6em;
+  }
+  #skill {
+    width: 50%;
+  }
+  .skill-card-grid {
+    justify-content: space-around;
+  }
+  .skill-row {
+    padding-bottom: 0.6em;
+  }
+  .skill-text {
+    width: 10vw;
+    font-size: 1vw;
+  }
+  .circle-container{
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  .circle-container:after {
+    width: 1vw;
+    height: 1vw;
+    border: 3px solid rgb(39, 165, 148);
+  }
+  .fill-up-five-circles, .fill-up-four-circles, .fill-up-three-circles, .fill-up-two-circles, .fill-up-one-circle{
+    width: 7.5vw;
+    height: 1.5vw;
+  }
+
+  #profile-section-container {
+    width: 50%;
+  }
+  #profile-picture {
+    width: 10vw;
+    height: auto;
+  }
+  .projects-grid {
+    width: 50%;
+  }
+}
