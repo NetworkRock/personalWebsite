@@ -1,561 +1,532 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Mobil settings -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Fullscreen mode safarie -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Typewriter -->
-    <script type="text/javascript" src="js/typewriter_effect.js" async></script>
-    <!-- Import Nav-Bar effect -->
-    <script
-      type="text/javascript"
-      src="js/interactive-timeline.js"
-      async
-    ></script>
-    <!-- Import Nav-Bar effect -->
-    <script
-      type="text/javascript"
-      src="js/nav-bar-buttons-color.js"
-      async
-    ></script>
-    <!-- Import stylesheet -->
-    <link rel="stylesheet" href="./css/style.css" />
-    <!-- Desktop stylesheet -->
-    <link rel="stylesheet" href="./css/desktop_styles.css" />
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <main>
-      <navbar id="navbar">
-        <ul id="nav-list">
+<head>
+  <!-- Mobil settings -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fullscreen mode safarie -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Typewriter -->
+  <script type="text/javascript" src="js/typewriter_effect.js" async></script>
+  <!-- Import Nav-Bar effect -->
+  <script type="text/javascript" src="js/interactive-timeline.js" async></script>
+  <!-- Import Nav-Bar effect -->
+  <script type="text/javascript" src="js/nav-bar-buttons-color.js" async></script>
+  <!-- Import stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <!-- Desktop stylesheet -->
+  <link rel="stylesheet" href="./css/desktop_styles.css" />
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <main>
+    <navbar id="navbar">
+      <ul id="nav-list">
+        <li>
+          <a id="welcomeLink" class="nav-link" onclick="triggerNavigation()" href="#welcome">WELCOME</a>
+          <div id="mobile-icon-container">
+            <img id="menu-icon" class="nav-link" onclick="triggerNavigation()" src="./images/menu.png" />
+          </div>
+        </li>
+        <ul id="nav-list-open">
           <li>
-            <a id="welcomeLink" class="nav-link" onclick="triggerNavigation()" href="#welcome">WELCOME</a>
-            <div id="mobile-icon-container">
-              <img id="menu-icon" class="nav-link" onclick="triggerNavigation()" src="./images/menu.png" />
-            </div>
+            <a id="profileLink" class="nav-link" onclick="triggerNavigation()" href="#profile">PROFILE</a>
           </li>
-          <ul id="nav-list-open">
-            <li>
-              <a id="profileLink" class="nav-link" onclick="triggerNavigation()" href="#profile">PROFILE</a>
-            </li>
-            <li>
-              <a id="skillLink" class="nav-link" onclick="triggerNavigation()" href="#skill">SKILLS</a>
-            </li>
-            <li>
-              <a id="projectsLink" class="nav-link" onclick="triggerNavigation()" href="#projects">PROJECTS</a>
-            </li>
-          </ul>
+          <li>
+            <a id="skillLink" class="nav-link" onclick="triggerNavigation()" href="#skill">SKILLS</a>
+          </li>
+          <li>
+            <a id="projectsLink" class="nav-link" onclick="triggerNavigation()" href="#projects">PROJECTS</a>
+          </li>
         </ul>
-      </navbar>
-      <section class="section-cards" id="welcome">
-        <div id="backgroundImage">
-          
-        </div>
-        <div id="background-overlay">
-          <ul id="socialSites">
-            <li>
-              <img class="logo" src="./images/githubLogo.png"/>
-              <a href="https://github.com/NetworkRock">https://github.com/NetworkRock</a>
-            </li>
-            <li>
-              <img class="logo" src="./images/linkedInLogo.png"/>
-              <a href="https://www.linkedin.com/in/robin-leeb-838746208/">https://www.linkedin.com/in/robin-leeb-838746208/</a>
-            </li>
-            <li>
-              <img class="logo" src="./images/freeCodeCampLogo.png" style="margin-top: 4px;"/>
-              <a href="https://www.freecodecamp.org/networkrocker">https://www.freecodecamp.org/networkrocker</a>
-            </li>
-          </ul>
-        </div>
-        <div id="start-overlay">
-          <span>
-            <span id="welcome-headline" class="headline"></span>
-            <span id="cursor" class="blinking-cursor">|</span>
-          </span>
-        </div>
-      </section>
-      <section class="section-cards" id="profile">
+      </ul>
+    </navbar>
+    <section class="section-cards" id="welcome">
+      <div id="backgroundImage">
+
+      </div>
+      <div id="background-overlay">
+        <ul id="socialSites">
+          <li>
+            <img class="logo" src="./images/githubLogo.png" />
+            <a href="https://github.com/NetworkRock">https://github.com/NetworkRock</a>
+          </li>
+          <li>
+            <img class="logo" src="./images/linkedInLogo.png" />
+            <a
+              href="https://www.linkedin.com/in/robin-leeb-838746208/">https://www.linkedin.com/in/robin-leeb-838746208/</a>
+          </li>
+          <li>
+            <img class="logo" src="./images/freeCodeCampLogo.png" style="margin-top: 4px;" />
+            <a href="https://www.freecodecamp.org/networkrocker">https://www.freecodecamp.org/networkrocker</a>
+          </li>
+        </ul>
+      </div>
+      <div id="start-overlay">
+        <span>
+          <span id="welcome-headline" class="headline"></span>
+          <span id="cursor" class="blinking-cursor">|</span>
+        </span>
+      </div>
+    </section>
+    <section class="section-cards" id="profile">
+      <div class="section-cards-header">
         <h1>Interactive CV</h1>
-        <div id="profile-section-container">
-          <div id="profile-picture-container">
-            <img id="profile-picture" src="images/profile-picture.png" />
-          </div>
-          <div id="about-me-info">
-            <p>
-              <strong>Name: </strong><br />Robin Leeb<br />
-              <strong>Birthdate: </strong><br />04.10.1993<br />
-              <strong>Degree:</strong><br />Bachelor of Science<br />
-              <strong>Languages:</strong><br />German (mother tongue)<br />English
-              (fluent)
-            </p>
-          </div>
-          <div id="my-quote">
-            <q
-              ><i
-                >How it is done is as important <br />
-                as getting it done</i
-              ></q
-            >
-          </div>
+      </div>
+      <div id="profile-section-container">
+        <div id="profile-picture-container">
+          <img id="profile-picture" src="images/profile-picture.png" />
         </div>
-        <div id="interactive-cv">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h1>YOURCE</h1>
-                <h2>FRONTEND ENGINEER</h2>
-              </div>
-              <div class="flip-card-back">
-                <h1>Technologies</h1>
-                <p>VBA (Visual Basic for Applications)</p>
-                <h2>Description</h2>
-                <p>
-                  Entwicklung eines Auswertungs- und Aufbereitungsprogramm, in
-                  Verbindung mit Excel und der Programmiersprache VBA Anfangs
-                  stand eine automatisch generierte Textdatei mit Analysedaten
-                  zur Verfügung, welche von
-                </p>
-              </div>
+        <div id="about-me-info">
+          <p>
+            <strong>Name: </strong><br />Robin Leeb<br />
+            <strong>Birthdate: </strong><br />04.10.1993<br />
+            <strong>Degree:</strong><br />Bachelor of Science<br />
+            <strong>Languages:</strong><br />German (mother tongue)<br />English
+            (fluent)
+          </p>
+        </div>
+        <div id="my-quote">
+          <q><i>How it is done is as important <br />
+              as getting it done</i></q>
+        </div>
+      </div>
+      <div id="interactive-cv">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h1>YOURCE</h1>
+              <h2>FRONTEND ENGINEER</h2>
+            </div>
+            <div class="flip-card-back">
+              <h1>Technologies</h1>
+              <p>VBA (Visual Basic for Applications)</p>
+              <h2>Description</h2>
+              <p>
+                Entwicklung eines Auswertungs- und Aufbereitungsprogramm, in
+                Verbindung mit Excel und der Programmiersprache VBA Anfangs
+                stand eine automatisch generierte Textdatei mit Analysedaten
+                zur Verfügung, welche von
+              </p>
             </div>
           </div>
+        </div>
 
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h1>Second Cards</h1>
-                <h2>Softwareentwickler</h2>
-              </div>
-              <div class="flip-card-back">
-                <h1>Second Card Back</h1>
-              </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h1>Second Cards</h1>
+              <h2>Softwareentwickler</h2>
+            </div>
+            <div class="flip-card-back">
+              <h1>Second Card Back</h1>
             </div>
           </div>
+        </div>
 
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h1>Third Cards</h1>
-                <h2>Softwareentwickler</h2>
-              </div>
-              <div class="flip-card-back">
-                <h1>Third Card Back</h1>
-              </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h1>Third Cards</h1>
+              <h2>Softwareentwickler</h2>
+            </div>
+            <div class="flip-card-back">
+              <h1>Third Card Back</h1>
             </div>
           </div>
         </div>
-        <div id="clickable-timeline-container">
-          <ul id="clickable-timeline">
-            <li class="timeline-item">
-              <button class="timeline-link-item">
-                09/2011<br /><br />02/2012
-              </button>
-            </li>
-            <li class="timeline-item">
-              <button class="timeline-link-item">
-                04/2012<br /><br />07/2012
-              </button>
-            </li>
-            <li class="timeline-item">
-              <button class="timeline-link-item">
-                10/2012<br /><br />01/2013
-              </button>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="section-cards" id="skill">
+      </div>
+      <div id="clickable-timeline-container">
+        <ul id="clickable-timeline">
+          <li class="timeline-item">
+            <button class="timeline-link-item">
+              09/2011<br /><br />02/2012
+            </button>
+          </li>
+          <li class="timeline-item">
+            <button class="timeline-link-item">
+              04/2012<br /><br />07/2012
+            </button>
+          </li>
+          <li class="timeline-item">
+            <button class="timeline-link-item">
+              10/2012<br /><br />01/2013
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="section-cards" id="skill">
+      <div class="section-cards-header">
         <h1 id="skill-headline">Skills</h1>
-        <div id="it-skills">
-          <h2>Frontend-Skills</h2>
-          <div class="skill-card-grid">
-            <div class="skill-grid-item">
-              <ul id="skill-list">
-                <li class="skill-row">
-                  <div class="skill-text">JavaScript</div>
-                  <div class="fill-up-five-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">TypeScript</div>
-                  <div class="fill-up-five-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Angular</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">React-Native</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Redux</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="skill-grid-item">
-              <ul id="skill-list">
-                <li class="skill-row">
-                  <div class="skill-text">Swift</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Android</div>
-                  <div class="fill-up-three-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Jasmine</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">jQuery</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+      </div>
+      <div id="it-skills">
+        <div class="skill-card-grid">
+          <h2 class="skill-grid-header">Frontend-Skills</h2>
+          <div class="skill-grid-item">
+            <ul id="skill-list">
+              <li class="skill-row">
+                <div class="skill-text">JavaScript</div>
+                <div class="fill-up-five-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">TypeScript</div>
+                <div class="fill-up-five-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Angular</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">React-Native</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Redux</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+            </ul>
           </div>
-          <h2>Backend</h2>
-          <div class="skill-card-grid">
-            <div class="skill-grid-item">
-              <ul id="skill-list">
-                <li class="skill-row">
-                  <div class="skill-text">Java</div>
-                  <div class="fill-up-five-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Node.js</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Spring</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Git</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="skill-grid-item">
-              <ul id="skill-list">
-                <li class="skill-row">
-                  <div class="skill-text">REST</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Firebase</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Maven</div>
-                  <div class="fill-up-three-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <h2>Other Skills</h2>
-          <div class="skill-card-grid">
-            <div class="skill-grid-item">
-              <ul id="skill-list">
-                <li class="skill-row">
-                  <div class="skill-text">IntelliJ</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Eclipse</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">XCode</div>
-                  <div class="fill-up-three-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="skill-grid-item">
-              <ul id="skill-list">
-                <li class="skill-row">
-                  <div class="skill-text">Scrum</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">CI / CD</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Atlassian Tools</div>
-                  <div class="fill-up-three-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <h2>Media Skills</h2>
-          <div class="skill-card-grid">
-            <div class="skill-grid-item">
-              <ul id="skill-list">
-                <li class="skill-row">
-                  <div class="skill-text">Cubase Pro</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Guitar Pro</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="skill-grid-item">
-              <ul id="skill-list">
-                <li class="skill-row">
-                  <div class="skill-text">Final Cut Pro</div>
-                  <div class="fill-up-four-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-                <li class="skill-row">
-                  <div class="skill-text">Gimp</div>
-                  <div class="fill-up-three-circles">
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                    <div class="circle-container"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+          <div class="skill-grid-item">
+            <ul id="skill-list">
+              <li class="skill-row">
+                <div class="skill-text">Swift</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Android</div>
+                <div class="fill-up-three-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Jasmine</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">jQuery</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
-      <section class="section-cards" id="projects">
+        <div class="skill-card-grid">
+          <h2 class="skill-grid-header">Backend</h2>
+          <div class="skill-grid-item">
+            <ul id="skill-list">
+              <li class="skill-row">
+                <div class="skill-text">Java</div>
+                <div class="fill-up-five-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Node.js</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Spring</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Git</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="skill-grid-item">
+            <ul id="skill-list">
+              <li class="skill-row">
+                <div class="skill-text">REST</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Firebase</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Maven</div>
+                <div class="fill-up-three-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="skill-card-grid">
+          <h2 class="skill-grid-header">Other Skills</h2>
+          <div class="skill-grid-item">
+            <ul id="skill-list">
+              <li class="skill-row">
+                <div class="skill-text">IntelliJ</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Eclipse</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">XCode</div>
+                <div class="fill-up-three-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="skill-grid-item">
+            <ul id="skill-list">
+              <li class="skill-row">
+                <div class="skill-text">Scrum</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">CI / CD</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Atlassian Tools</div>
+                <div class="fill-up-three-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="skill-card-grid">
+          <h2 class="skill-grid-header">Media Skills</h2>
+          <div class="skill-grid-item">
+            <ul id="skill-list">
+              <li class="skill-row">
+                <div class="skill-text">Cubase Pro</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Guitar Pro</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="skill-grid-item">
+            <ul id="skill-list">
+              <li class="skill-row">
+                <div class="skill-text">Final Cut Pro</div>
+                <div class="fill-up-four-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+              <li class="skill-row">
+                <div class="skill-text">Gimp</div>
+                <div class="fill-up-three-circles">
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                  <div class="circle-container"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-cards" id="projects">
+      <div class="section-cards-header">
         <h1 class="project-tile">My Projects</h1>
-        <div class="projects-grid">
-          <div class="project-grid-item">
-            <a
-              class="project-grid-item-link"
-              href="https://www.google.de"
-              target="_blank"
-            ></a>
-            <div class="project-overlay">
-              <div class="project-text">
-                <h3>Description of Project</h3>
-              </div>
-            </div>
-          </div>
-          <div class="project-grid-item">
-            <a
-              class="project-grid-item-link"
-              href="https://www.google.de"
-              target="_blank"
-            ></a>
-            <div class="project-overlay">
-              <div class="project-text">
-                <h3>Description of Project</h3>
-              </div>
-            </div>
-          </div>
-          <div class="project-grid-item">
-            <a
-              class="project-grid-item-link"
-              href="https://www.google.de"
-              target="_blank"
-            ></a>
-            <div class="project-overlay">
-              <div class="project-text">
-                <h3>Description of Project</h3>
-              </div>
-            </div>
-          </div>
-          <div class="project-grid-item">
-            <a
-              class="project-grid-item-link"
-              href="https://www.google.de"
-              target="_blank"
-            ></a>
-            <div class="project-overlay">
-              <div class="project-text">
-                <h3>Description of Project</h3>
-              </div>
-            </div>
-          </div>
-          <div class="project-grid-item">
-            <a
-              class="project-grid-item-link"
-              href="https://www.google.de"
-              target="_blank"
-            ></a>
-            <div class="project-overlay">
-              <div class="project-text">
-                <h3>Description of Project</h3>
-              </div>
-            </div>
-          </div>
-          <div class="project-grid-item">
-            <a
-              class="project-grid-item-link"
-              href="https://www.google.de"
-              target="_blank"
-            ></a>
-            <div class="project-overlay">
-              <div class="project-text">
-                <h3>Description of Project</h3>
-              </div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-grid-item">
+          <a class="project-grid-item-link" href="https://www.google.de" target="_blank"></a>
+          <div class="project-overlay">
+            <div class="project-text">
+              <h3>Description of Project</h3>
             </div>
           </div>
         </div>
-      </section>
-    </main>
-  </body>
+        <div class="project-grid-item">
+          <a class="project-grid-item-link" href="https://www.google.de" target="_blank"></a>
+          <div class="project-overlay">
+            <div class="project-text">
+              <h3>Description of Project</h3>
+            </div>
+          </div>
+        </div>
+        <div class="project-grid-item">
+          <a class="project-grid-item-link" href="https://www.google.de" target="_blank"></a>
+          <div class="project-overlay">
+            <div class="project-text">
+              <h3>Description of Project</h3>
+            </div>
+          </div>
+        </div>
+        <div class="project-grid-item">
+          <a class="project-grid-item-link" href="https://www.google.de" target="_blank"></a>
+          <div class="project-overlay">
+            <div class="project-text">
+              <h3>Description of Project</h3>
+            </div>
+          </div>
+        </div>
+        <div class="project-grid-item">
+          <a class="project-grid-item-link" href="https://www.google.de" target="_blank"></a>
+          <div class="project-overlay">
+            <div class="project-text">
+              <h3>Description of Project</h3>
+            </div>
+          </div>
+        </div>
+        <div class="project-grid-item">
+          <a class="project-grid-item-link" href="https://www.google.de" target="_blank"></a>
+          <div class="project-overlay">
+            <div class="project-text">
+              <h3>Description of Project</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
 </html>
