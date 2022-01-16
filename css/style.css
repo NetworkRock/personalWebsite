@@ -23,7 +23,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 400vh;
+  height: 386vh;
 }
 
 h1, h2, h3, p, q, a, span, button, .project-text, #cursor{
@@ -158,16 +158,16 @@ p, i {
  */
 
  .section-cards {
+  scroll-margin-top: 7vh;
   z-index: 1;
   display: block;
   background-color: rgba(63,63,67,0.85);
   flex: 1;
   width: 100vw;
+  max-height: 93vh;
 }
 
 .section-cards-header {
-  margin-top: 7vh;
-  scroll-margin-top: 7vh;
   text-align: center;
 }
 
@@ -191,10 +191,13 @@ p, i {
 #welcome {
   display: flex;
   justify-content: flex-end;
+  min-height: 107vh;
+  max-height: 107vh;
 }
 
 #start-overlay {
   position: fixed;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -221,10 +224,14 @@ p, i {
 #socialSites {
   display: flex;
   flex-direction: column;
-  width: 90vw;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 7vh;
   word-break: break-word;
   list-style: none;
   padding: 0;
+  z-index: 1;
 }
 
 #socialSites li {

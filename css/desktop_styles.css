@@ -6,6 +6,9 @@
 
  /* If screen size is more than 900px wide */
  @media screen and (min-width: 900px) {
+  main {
+    height: 400vh;
+  }
   h1 {
     font-size: 2vw;
   }
@@ -39,6 +42,10 @@
     align-items: center;
     height: 6em;
     width: 6vw;
+  }
+  #welcome {
+    min-height: 100vh;
+    max-height: 100vh;
   }
   #mobile-icon-container {
     display: none;
