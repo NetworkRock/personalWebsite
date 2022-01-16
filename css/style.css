@@ -6,7 +6,8 @@
 
 html,
 body {
-  height: 100%;
+  min-height: -webkit-fill-available;
+  height: 100vh;
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -481,7 +482,7 @@ p, i {
   flex-direction: column;
   align-items: center;
   background-color: rgba(63,63,67,1);
-  width: 100%;
+  min-width: 50%;
 }
 
 #it-skills {
