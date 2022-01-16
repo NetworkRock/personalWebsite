@@ -158,6 +158,7 @@ p, i {
   display: flex;
   background-color: rgba(63,63,67,0.85);
   flex: 1;
+  height: var(--app-height);
   height: 100vh;
   width: 100%;
 }
