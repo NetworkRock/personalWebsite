@@ -65,6 +65,10 @@
     scroll-margin-top: 0vh;
     max-height: 100vh;
   }
+  .section-cards-header {
+    margin-top: 0vh;
+    scroll-margin-top: 0vh;
+  }
   #interactive-cv {
     flex: 1.5;
     width: 50vw;
@@ -101,9 +105,26 @@
     width: 7.5vw;
     height: 1.5vw;
   }
-
+  #profile {
+    align-items: center;
+  }
   #profile-section-container {
+    flex: 1;
     width: 50%;
+  }
+  #interactive-cv {
+    flex:2.5;
+  }
+  #clickable-timeline-container {
+    display: flex;
+    justify-content: center;
+    flex:1;
+  }
+  #it-skills {
+    display: grid
+  }
+  .skill-grid-header {
+    grid-column: 1 / span 2;
   }
   #profile-picture {
     width: 10vw;

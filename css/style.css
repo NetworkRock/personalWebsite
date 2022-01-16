@@ -96,7 +96,7 @@ p, i {
   align-items: center;
   height: 5vh;
   width: 100%;
-  padding: 5px;
+  padding: 1vh;
   background: rgba(63,63,67,1);
   text-decoration: none;
   color: white;
@@ -159,13 +159,16 @@ p, i {
 
  .section-cards {
   z-index: 1;
-  display: flex;
+  display: block;
   background-color: rgba(63,63,67,0.85);
   flex: 1;
-  margin-top: 5vh;
-  scroll-margin-top: 5vh;
-  max-height: 95vh;
   width: 100vw;
+}
+
+.section-cards-header {
+  margin-top: 7vh;
+  scroll-margin-top: 7vh;
+  text-align: center;
 }
 
 /* 
@@ -188,7 +191,6 @@ p, i {
 #welcome {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
 }
 
 #start-overlay {
@@ -343,12 +345,11 @@ p, i {
 #profile {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 #profile-section-container {
   display: flex;
-  flex:1;
+  flex:2;
   flex-direction: row;
   align-items: center;
   width: 100vw;
@@ -380,16 +381,15 @@ p, i {
 #interactive-cv {
   display: flex;
   justify-content: center;
-  flex:2.5;
+  flex:5;
   width: 100vw;
 }
 
 #clickable-timeline-container {
   display: flex;
   justify-content: center;
-  flex:1;
+  flex:2;
   width: 100vw;
-  height: 5em;
 }
 
 #clickable-timeline {
@@ -498,14 +498,18 @@ p, i {
 
 #it-skills {
   display: grid;
-  position: relative;
-  width: 80%;
-  z-index: 1;
+  padding-left: 2vh;
+  padding-right: 2vh;
+}
+.skill-grid-header {
+  margin-bottom: 0;
+  grid-column: 1 / span 2;
 }
 
 .skill-card-grid {
   z-index: 1;
   display: grid;
+  justify-content: space-around;
   grid-template-columns: auto auto;
   flex: 1;
 }
