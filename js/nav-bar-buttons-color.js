@@ -70,7 +70,7 @@ window.onload = init;
 
 /* Methode for open and close the navigation */
 function triggerNavigation() {
-  var x = document.getElementById("nav-list");
+  var x = document.getElementById("nav-list-open");
   if (!isDesktop) {
     if (x.style.display === "flex") {
       x.style.display = "none";
