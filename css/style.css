@@ -94,7 +94,7 @@ p, i {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 1em;
+  height: 5vh;
   width: 100%;
   padding: 5px;
   background: rgba(63,63,67,1);
@@ -162,7 +162,9 @@ p, i {
   display: flex;
   background-color: rgba(63,63,67,0.85);
   flex: 1;
-  height: 100vh;
+  margin-top: 5vh;
+  scroll-margin-top: 5vh;
+  max-height: 95vh;
   width: 100vw;
 }
 

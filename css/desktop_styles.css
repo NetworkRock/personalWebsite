@@ -60,6 +60,11 @@
   #background-image {
     background-position-y: -100px;
   }
+  .section-cards {
+    margin-top: 0vh;
+    scroll-margin-top: 0vh;
+    max-height: 100vh;
+  }
   #interactive-cv {
     flex: 1.5;
     width: 50vw;
