@@ -398,8 +398,6 @@ p, i {
   justify-content: center;
   flex:2;
   width: 100vw;
-  overflow-x: scroll;
-  overflow-y: hidden;
 }
 
 #clickable-timeline {
