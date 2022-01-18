@@ -6,7 +6,19 @@
 
  /* If screen size is more than 900px wide */
  @media screen and (min-width: 900px) {
+  html, body {
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow: scroll;
+  }
+  body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
   main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
     height: 400vh;
   }
   h1 {
@@ -19,21 +31,27 @@
     font-size: 0.9vw;
   }
   #navbar {
+    position: fixed;
+    display: flex;
+    z-index: 2;
     flex-direction: column;
     align-items: flex-end;
     width: 6vw;
     top: 3vw;
     left: 94vw;
+    opacity: 0;
+    margin-right: 12vw;
   }
   #nav-list {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     margin: 0px;
     margin-right: 2vw;
     padding: 0px;
     font-family: 'Space Grotesk', sans-serif;
-  }
-  #nav-list-open {
-    display: flex;
+    list-style-type: none;
   }
   #nav-list li, .nav-link {
     display: flex;
@@ -42,13 +60,36 @@
     align-items: center;
     height: 6em;
     width: 6vw;
+    background: rgba(63,63,67,1);
+    text-decoration: none;
+    color: white;
+  }
+  #nav-list li, .nav-link:hover {
+    background-color: #27a594;
+  }
+  .nav-link-active {
+    background-color: #27a594;
+  }
+  .section-cards {
+    z-index: 1;
+    display: block;
+    background-color: rgba(63,63,67,0.85);
+    flex: 1;
+    width: 100vw;
+    margin-top: 0vh;
+    scroll-margin-top: 0vh;
+    max-height: 100vh;
+  }
+  .section-cards-header {
+    margin-top: 0vh;
+    scroll-margin-top: 0vh;
+  }
+  #background-image {
+    background-position-y: -100px;
   }
   #welcome {
     min-height: 100vh;
     max-height: 100vh;
-  }
-  #mobile-icon-container {
-    display: none;
   }
   #background-overlay {
     justify-content: center;
@@ -64,18 +105,7 @@
   #socialSites a {
     font-size: 1vw;
   }
-  #background-image {
-    background-position-y: -100px;
-  }
-  .section-cards {
-    margin-top: 0vh;
-    scroll-margin-top: 0vh;
-    max-height: 100vh;
-  }
-  .section-cards-header {
-    margin-top: 0vh;
-    scroll-margin-top: 0vh;
-  }
+
   #interactive-cv {
     flex: 1.5;
     width: 50vw;
