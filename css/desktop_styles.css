@@ -75,10 +75,8 @@
     display: block;
     background-color: rgba(63,63,67,0.85);
     flex: 1;
-    width: 100vw;
     margin-top: 0vh;
     scroll-margin-top: 0vh;
-    max-height: 100vh;
   }
   .section-cards-header {
     margin-top: 0vh;
@@ -118,6 +116,7 @@
   }
   #skill {
     width: 50%;
+    min-width: 50%;
   }
   .skill-card-grid {
     justify-content: space-around;
