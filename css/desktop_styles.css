@@ -172,4 +172,7 @@
     grid-template-columns: auto auto auto;
     width: 50%;
   }
+  .project-grid-item:first-child { 
+    grid-column: 1 / span 2;
+  }
 }
