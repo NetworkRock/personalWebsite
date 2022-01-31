@@ -106,7 +106,7 @@ p, i {
   z-index: 1;
   background-color: rgba(63,63,67,0.85);
 	min-width: 100vw;
-	min-height: 100vh;
+  max-height: 100vh;
 	scroll-snap-align: start;
 	text-align: center;
 }

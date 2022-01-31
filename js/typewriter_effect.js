@@ -24,7 +24,6 @@ var wordCounter = 1;
 var pauseWriting = true;
 
 
-document.ontouchmove = function(e) {e.preventDefault()};
 
 function startAnimations() {
   navBar.classList.add("fade-in");
