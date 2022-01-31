@@ -117,8 +117,7 @@ p, i {
 
 .section-cards-header > h1{
   margin: 0;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding: 0;
 }
 
 /* 
