@@ -427,6 +427,9 @@ p, i {
 }
 
 .flip-card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: rgba(63,63,67,1);
   color: white;
   -webkit-transform: rotate(180deg);

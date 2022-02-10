@@ -12,15 +12,11 @@ var welcomeHeadline = document.getElementById("welcome-headline");
 var cursor = document.getElementById("cursor");
 var navBar = document.getElementById("navbar");
 
-// Boolean for deleteMode
 var deleteMode = false;
-// Letter counter;
 var letterCounter = 0;
 // Get first text
 var nextTextObject = textsIterator.next();
-// Word counter
 var wordCounter = 1;
-// Pause Boolean
 var pauseWriting = true;
 
 

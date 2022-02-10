@@ -2,14 +2,22 @@
 <html>
 
 <head>
+  <!-- Fav icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <!-- Mobil settings -->
-  <meta name="viewport" content="width=device-width, height=device-height minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport"
+    content="width=device-width, height=device-height minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- Fullscreen mode safarie -->
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Papa parser module -->
+  <script src="js/papa.js" data-embed></script>
+  <!-- Interactive cv builder -->
+  <script type="text/javascript" src="js/cv-builder.js" async></script>
   <!-- Typewriter -->
   <script type="text/javascript" src="js/typewriter_effect.js" async></script>
-  <!-- Import Nav-Bar effect -->
-  <script type="text/javascript" src="js/interactive-timeline.js" async></script>
   <!-- Import Nav-Bar effect -->
   <script type="text/javascript" src="js/nav-bar-buttons-color.js" async></script>
   <!-- Import stylesheet -->
@@ -23,6 +31,7 @@
 </head>
 
 <body onclick>
+  <input id="file_cv" type="file" name="file_cv" style="display: none;" />
   <main>
     <navbar id="navbar">
       <ul id="nav-list">
@@ -45,17 +54,18 @@
       </div>
       <ul id="socialSites">
         <li>
-          <img class="logo" src="./images/githubLogo.png" />
+          <img class="logo" src="./images/github-logo.png" />
           <a href="https://github.com/NetworkRock" target="_blank">https://github.com/NetworkRock</a>
         </li>
         <li>
-          <img class="logo" src="./images/linkedInLogo.png" />
-          <a
-            href="https://www.linkedin.com/in/robin-leeb-838746208/" target="_blank">https://www.linkedin.com/in/robin-leeb-838746208/</a>
+          <img class="logo" src="./images/linkedIn-logo.png" />
+          <a href="https://www.linkedin.com/in/robin-leeb-838746208/"
+            target="_blank">https://www.linkedin.com/in/robin-leeb-838746208/</a>
         </li>
         <li>
-          <img class="logo" src="./images/freeCodeCampLogo.png" style="margin-top: 4px;" />
-          <a href="https://www.freecodecamp.org/networkrocker" target="_blank">https://www.freecodecamp.org/networkrocker</a>
+          <img class="logo" src="./images/freecodecamp-logo.png" style="margin-top: 4px;" />
+          <a href="https://www.freecodecamp.org/networkrocker"
+            target="_blank">https://www.freecodecamp.org/networkrocker</a>
         </li>
       </ul>
       <div id="background-overlay">
@@ -89,69 +99,9 @@
               as getting it done</i></q>
         </div>
       </div>
-      <div id="interactive-cv">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h1>YOURCE</h1>
-              <h2>FRONTEND ENGINEER</h2>
-            </div>
-            <div class="flip-card-back">
-              <h1>Technologies</h1>
-              <p>VBA (Visual Basic for Applications)</p>
-              <h2>Description</h2>
-              <p>
-                Entwicklung eines Auswertungs- und Aufbereitungsprogramm, in
-                Verbindung mit Excel und der Programmiersprache VBA Anfangs
-                stand eine automatisch generierte Textdatei mit Analysedaten
-                zur Verfügung, welche von
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h1>Second Cards</h1>
-              <h2>Softwareentwickler</h2>
-            </div>
-            <div class="flip-card-back">
-              <h1>Second Card Back</h1>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h1>Third Cards</h1>
-              <h2>Softwareentwickler</h2>
-            </div>
-            <div class="flip-card-back">
-              <h1>Third Card Back</h1>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="interactive-cv"></div>
       <div id="clickable-timeline-container">
-        <ul id="clickable-timeline">
-          <li class="timeline-item">
-            <button class="timeline-link-item">
-              09/2011<br /><br />02/2012
-            </button>
-          </li>
-          <li class="timeline-item">
-            <button class="timeline-link-item">
-              04/2012<br /><br />07/2012
-            </button>
-          </li>
-          <li class="timeline-item">
-            <button class="timeline-link-item">
-              10/2012<br /><br />01/2013
-            </button>
-          </li>
-        </ul>
+        <ul id="clickable-timeline"></ul>
       </div>
     </section>
     <section class="section-cards" id="skill">
