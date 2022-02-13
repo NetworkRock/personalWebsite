@@ -5,8 +5,8 @@ const ratings = {
   5: 'fill-up-five-circles',
   4: 'fill-up-four-circles',
   3: 'fill-up-three-circles',
-  2: 'fill-up-fwo-circles',
-  1: 'fill-up-one-circles'
+  2: 'fill-up-two-circles',
+  1: 'fill-up-one-circle'
 }
 
 async function buildSkills() {
@@ -28,25 +28,26 @@ async function buildSkills() {
       Object.keys(skillMap).forEach(async (section) => {
         const rowSplit = Math.ceil(Object.keys(skillMap[section]).length / skillGridItemCounter)
         const rows = []
-        Object.entries(skillMap[section]).sort((row1 , row2) => row2[1] - row1[1]).forEach(async (technologies) => {
-          const [technologie, rating] = technologies
-          const skillRow = document.createElement('li')
-          skillRow.classList.add('skill-row')
-          const skillText = document.createElement('div')
-          skillText.classList.add('skill-text')
-          const skillTextInner = document.createTextNode(technologie)
-          skillText.appendChild(skillTextInner)
-          const fillUpCircles = document.createElement('div')
-          fillUpCircles.classList.add(ratings[rating])
-          for (let i = 0; i < rating; i++) {
-            const circle = document.createElement('div')
-            circle.classList.add('circle-conatainer')
-            fillUpCircles.appendChild(circle)
-          }
-          skillRow.appendChild(skillText)
-          skillRow.appendChild(fillUpCircles)
-          rows.push(skillRow)
-        })
+        Object.entries(skillMap[section])
+          .sort((row1, row2) => row2[1] - row1[1]).forEach(async (technologies) => {
+            const [technologie, rating] = technologies
+            const skillRow = document.createElement('li')
+            skillRow.classList.add('skill-row')
+            const skillText = document.createElement('div')
+            skillText.classList.add('skill-text')
+            const skillTextInner = document.createTextNode(technologie)
+            skillText.appendChild(skillTextInner)
+            const fillUpCircles = document.createElement('div')
+            fillUpCircles.classList.add(ratings[rating])
+            for (let i = 0; i < rating; i++) {
+              const circle = document.createElement('div')
+              circle.classList.add('circle-container')
+              fillUpCircles.appendChild(circle)
+            }
+            skillRow.appendChild(skillText)
+            skillRow.appendChild(fillUpCircles)
+            rows.push(skillRow)
+          })
 
         const skillCardGrid = document.createElement('div')
         skillCardGrid.classList.add('skill-card-grid')
@@ -61,7 +62,7 @@ async function buildSkills() {
           skillSectionGridItem.classList.add('skill-grid-item')
           const skillList = document.createElement('ul')
           skillList.classList.add('skill-list')
-          if(itemCounter) {
+          if (itemCounter) {
             skillList.append(...rowChunk)
           } else {
             skillList.append(...rows)
