@@ -58,7 +58,7 @@ async function buildCV() {
         interactiveCV.appendChild(flipCard)
   
   
-        const timelineYear = document.createTextNode(row[0] + '\n' + row[1])
+        const timelineYear = document.createTextNode(row[0] + ' - ' + row[1])
         const timelineItem = document.createElement('li')
         timelineItem.classList.add('timeline-item')
         const timelineButton = document.createElement('button')

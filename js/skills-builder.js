@@ -1,5 +1,3 @@
-
-const itSkills = document.getElementById('it-skills')
 const skillGridItemCounter = 2
 const ratings = {
   5: 'fill-up-five-circles',
@@ -39,7 +37,7 @@ async function buildSkills() {
             skillText.appendChild(skillTextInner)
             const fillUpCircles = document.createElement('div')
             fillUpCircles.classList.add(ratings[rating])
-            for (let i = 0; i < rating; i++) {
+            for (let i = 0; i < 5; i++) {
               const circle = document.createElement('div')
               circle.classList.add('circle-container')
               fillUpCircles.appendChild(circle)
@@ -70,7 +68,7 @@ async function buildSkills() {
           skillSectionGridItem.appendChild(skillList)
           skillCardGrid.appendChild(skillSectionGridItem)
         }
-
+        const itSkills = document.getElementById('it-skills')
         itSkills.appendChild(skillCardGrid)
       })
     }
