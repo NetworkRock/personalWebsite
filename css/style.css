@@ -479,7 +479,7 @@ p, i {
   display: flex;
 }
 
-#skill-list {
+.skill-list {
   flex: 1;
   flex-direction: column;
   padding: 0px;

@@ -4,7 +4,7 @@ let headlines = []
 
 async function buildCV() {
   let index = 0
-  Papa.parse("../cv.csv", {
+  Papa.parse("../csv/cv.csv", {
     download: true,
     step: function ({ data }) {
       const row = data
