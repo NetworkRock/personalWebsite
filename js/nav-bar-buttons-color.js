@@ -1,6 +1,3 @@
-// Detect Desktop devices
-const isDesktop = window.matchMedia("screen and (min-width: 900px)").matches;
-
 // Navigation Links Key Map
 const navigationLinks = {
   "#welcome": document.getElementById("welcomeLink"),
@@ -11,11 +8,11 @@ const navigationLinks = {
 
 // Skill circle map
 const skillCirclesMap = [
-  document.querySelectorAll(".fill-up-five-circles"),
-  document.querySelectorAll(".fill-up-four-circles"),
-  document.querySelectorAll(".fill-up-three-circles"),
-  document.querySelectorAll(".fill-up-two-circles"),
-  document.querySelectorAll(".fill-up-one-circle"),
+  document.getElementsByClassName("fill-up-five-circles"),
+  document.getElementsByClassName("fill-up-four-circles"),
+  document.getElementsByClassName("fill-up-three-circles"),
+  document.getElementsByClassName("fill-up-two-circles"),
+  document.getElementsByClassName("fill-up-one-circle"),
 ];
 
 function init() {

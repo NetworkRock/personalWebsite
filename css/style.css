@@ -6,7 +6,6 @@
 
 html,
 body {
-  position: fixed;
   overflow: hidden;
   max-width: 100%;
   max-height: 100%;
@@ -46,7 +45,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1vw;
+  font-size: 3vw;
 }
 
 p, i {
@@ -504,6 +503,9 @@ p, i {
 .circle-container{
   z-index: 1;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 3vw;
   height: 3vw;
   overflow: hidden;
@@ -523,7 +525,7 @@ p, i {
 
 .fill-up-five-circles, .fill-up-four-circles, .fill-up-three-circles, .fill-up-two-circles, .fill-up-one-circle{
   display: flex;
-  width: 15vw;
+  width: 14vw;
   height: 3vw;
   background: #000000;
   background: linear-gradient(to right, #27a594 50%, transparent 50%) left;
@@ -583,7 +585,7 @@ p, i {
 }
 
 
-.projects-grid {
+#project-grid {
   display: grid;
   grid-template-columns: auto;
   grid-gap: 1%;
@@ -598,8 +600,8 @@ p, i {
   justify-content: center;
   align-items: center;
   background-image: url("../images/exampe-project.jpg");
-  background-size: auto 100%;
-  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .project-grid-item-link {
