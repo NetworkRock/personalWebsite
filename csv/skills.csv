@@ -2,21 +2,19 @@ Frontend,
 JavaScript,5
 TypeScript,5
 Angular,4
-React,5
 Redux,5
+React,5
 Swift,3
 Android,3
-React-Testing-Library,4
 Jest,4
-JUnit,4
 jQuery,3
 Backend,
 Java,5
-Node.js,4
 Spring,4
-Git,4
+Node.js,4
+CouchDB,3
+JUnit,4
 Firebase,4
-Maven,3
 Other Skills,
 Visual Studio Code,5
 IntelliJ,4
@@ -25,6 +23,7 @@ XCode,3
 Scrum,4
 CI /CD,4
 Atlassian Tools,4
+Git,4
 Media Skills,
 Final Cut Pro,5
 Cubase Pro,4

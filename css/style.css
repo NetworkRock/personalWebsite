@@ -136,7 +136,9 @@ p, i {
   bottom: 0;
   width: 100vw; 
   height: 100%;
-  background-image: url(../images/profile-picture-background.jpg);
+  background-image: url(../images/profile-picture-background.png);
+  background-position-x: center;
+  background-position-y: center;
   background-size: cover;
 }
 
@@ -448,8 +450,16 @@ p, i {
  * - SKILL SECTION -
  * ---------------------------------------------- 
  */
+ #skill-container {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  min-width: 100vw;
+}
 
 #skill {
+  flex: 1;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   background-color: rgba(63,63,67,1);
@@ -599,7 +609,6 @@ p, i {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../images/exampe-project.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
