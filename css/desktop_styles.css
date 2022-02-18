@@ -87,9 +87,6 @@
     padding-top: 2em;
     padding-bottom: 2em;
   }
-  #background-image {
-    background-position-y: -100px;
-  }
   #welcome {
     min-height: 100vh;
     max-height: 100vh;
@@ -103,7 +100,7 @@
     align-items: center;
     width: 100vw;
     margin-top: 85vh;
-    margin-right: 6vw;
+    margin-right: 0vw;
   }
   #socialSites a {
     font-size: 1vw;
@@ -120,8 +117,13 @@
     height: 6em;
   }
   #skill {
-    width: 50%;
-    min-width: 50%;
+    flex: 1;
+    min-width: 0vw;
+  }
+  #skill-background-picture {
+    flex: 1;
+    background-image: linear-gradient(to right, rgba(63,63,67,1), rgba(120,120,120,0.9)), url(../images/skills-background.jpg);
+    background-size: cover;
   }
   .skill-card-grid {
     justify-content: space-around;
