@@ -136,7 +136,7 @@ p, i {
   bottom: 0;
   width: 100vw; 
   height: 100%;
-  background-image: url(../images/profile-picture-background.png);
+  background-image: url(../images/profile-picture-background.jpg);
   background-position-x: center;
   background-position-y: center;
   background-size: cover;
@@ -210,11 +210,24 @@ p, i {
   text-shadow: 0px 0px 8px rgb(0, 0, 0);
 }
 
+
 .logo {
-  padding: 1em;
+  margin: 1em;
   width: 3em;
-  height: auto;
+  height: 3em;
   align-self: flex-start;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#githubLogo {
+  background-image: url(../images/github-logo.jpg);
+}
+#linkedInLogo {
+  background-image: url(../images/linkedIn-logo.jpg);
+}
+#freeCodeCampLogo {
+  background-image: url(../images/freecodecamp-logo.jpg);
 }
 
 #welcome-headline {
@@ -323,8 +336,12 @@ p, i {
 }
 
 #profile-picture {
+  background-image: url(../images/profile-picture.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 25vw;
-  height: auto;
+  height: 25vh;
 }
 
 #about-me-info {

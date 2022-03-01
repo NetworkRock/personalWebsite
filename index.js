@@ -1,9 +1,28 @@
+import $ from "jquery";
+
+import './css/style.css'
+import './css/desktop_styles.css'
+
+import './site.webmanifest.json'
+
+import './images/personal-website.jpg'
+
+import "./icons/apple-touch-icon.jpg"
+import "./icons/favicon-32x32.jpg"
+import "./icons/favicon-16x16.jpg"
+import "./icons/favicon.ico"
+
+import buildCV from "./src/js/cv-builder";
+import buildProjects from "./src/js/projects-builder";
+import buildSkills from "./src/js/skills-builder";
+import writing from "./src/js/typewriter_effect";
+
 // Navigation Links Key Map
 const navigationLinks = {
-  "#welcome": document.getElementById("welcomeLink"),
-  "#profile": document.getElementById("profileLink"),
-  "#skill": document.getElementById("skillLink"),
-  "#projects": document.getElementById("projectsLink"),
+  "#welcome": $("#welcomeLink"),
+  "#profile": $("#profileLink"),
+  "#skill": $("#skillLink"),
+  "#projects": $("#projectsLink"),
 };
 
 // Skill circle map
@@ -16,22 +35,25 @@ const skillCirclesMap = [
 ];
 
 function init() {
+  buildProjects();
+  buildSkills();
+  buildCV();
   if (location.hash.length === 0) {
     writing();
-    welcomeLink.classList.add("nav-link-active");
+    $('welcomeLink').addClass("nav-link-active");
   } else {
-    navBar.style.opacity = 1;
-    startOverlay.style.width = "0vw";
-    startOverlay.style.backgroundColor = "rgba(63,63,67,1)";
-    welcomeHeadline.style.opacity = 0;
-    cursor.style.opacity = 0;
+    $('#navBar').css("opacity", 1);
+    $('#start-overlay').css("width", '0vw');
+    $('#start-overlay').css("backgroundColor", 'rgba(63,63,67,1)');
+    $('#welcome-headline').css("opacity", 0);
+    $('#cursor').css("opacity", 0);
   }
 }
 
 function resetByLocationChanged() {
   // Remove class for active link on every link
   Object.values(navigationLinks).forEach((linkElement) => {
-    linkElement.classList.remove("nav-link-active");
+    linkElement.removeClass("nav-link-active");
   });
   // Remoce circle animation on all circleElements
   skillCirclesMap.forEach((circleElement) => {
@@ -48,7 +70,7 @@ function locationHashChanged() {
     Object.keys(navigationLinks).find(
       (linkElement) => linkElement === location.hash
     )
-  ].classList.add("nav-link-active");
+  ].addClass("nav-link-active");
   // Add the circle animation
   if (location.hash === "#skill") {
     skillCirclesMap.forEach((circleElement) => {
@@ -59,5 +81,5 @@ function locationHashChanged() {
   }
 }
 
-window.onhashchange = locationHashChanged;
-window.onload = init;
+onhashchange = locationHashChanged
+onload = init

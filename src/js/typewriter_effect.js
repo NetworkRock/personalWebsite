@@ -28,18 +28,18 @@ function startAnimations() {
   cursor.classList.add("fade-out");
 }
 
-function writing() {
+const writing = async () => {
   setTimeout(async () => {
-    if (this.letterCounter < nextTextObject.value.length && !deleteMode) {
+    if (letterCounter < nextTextObject.value.length && !deleteMode) {
       typingLetters();
     } else {
       if (letterCounter === 0) {
         getNextText();
-        this.deleteMode = false;
+        deleteMode = false;
       } else {
         if (!(wordCounter >= textsToType.length)) {
           // Pause a bit before continue writing
-          if (this.pauseWriting) {
+          if (pauseWriting) {
             await pauseBeforeNextWord();
           }
           deletingLetters();
@@ -54,23 +54,23 @@ function writing() {
 }
 
 function typingLetters() {
-  this.elementToTypewrite.appendChild(
-    document.createTextNode(nextTextObject.value.charAt(this.letterCounter))
+  elementToTypewrite.appendChild(
+    document.createTextNode(nextTextObject.value.charAt(letterCounter))
   );
-  this.letterCounter++;
+  letterCounter++;
 }
 function deletingLetters() {
-  this.deleteMode = true;
-  this.letterCounter--;
-  this.elementToTypewrite.removeChild(
-    this.elementToTypewrite.childNodes[this.letterCounter]
+  deleteMode = true;
+  letterCounter--;
+  elementToTypewrite.removeChild(
+    elementToTypewrite.childNodes[letterCounter]
   );
 }
 
 function pauseBeforeNextWord() {
   return new Promise((resolve) => {
     setTimeout(() => {
-      this.pauseWriting = false;
+      pauseWriting = false;
       resolve();
     }, 2000);
   });
@@ -85,8 +85,11 @@ function pauseBeforeStartAnimation() {
 }
 
 function getNextText() {
-  this.nextTextObject = textsIterator.next();
-  this.letterCounter = 0;
-  this.wordCounter++;
-  this.pauseWriting = true;
+  nextTextObject = textsIterator.next();
+  letterCounter = 0;
+  wordCounter++;
+  pauseWriting = true;
 }
+
+
+export default writing
