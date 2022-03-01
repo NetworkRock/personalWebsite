@@ -1,0 +1,40 @@
+{
+  "name": "personalwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve",
+    "build": "NODE_ENV='production' webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NetworkRock/personalWebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NetworkRock/personalWebsite/issues"
+  },
+  "homepage": "https://github.com/NetworkRock/personalWebsite#readme",
+  "devDependencies": {
+    "@types/papaparse": "^5.3.2",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.6.0",
+    "csv-loader": "^3.0.3",
+    "html-webpack-plugin": "^5.5.0",
+    "raw-loader": "^4.0.2",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "dependencies": {
+    "date-fns": "^2.28.0",
+    "jquery": "^3.6.0",
+    "papaparse": "^5.3.1",
+    "svg-inline-loader": "^0.8.2"
+  }
+}

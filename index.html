@@ -2,32 +2,11 @@
 <html>
 
 <head>
-  <!-- Fav icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
   <!-- Mobil settings -->
   <meta name="viewport"
     content="width=device-width, height=device-height minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- Fullscreen mode safarie -->
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <!-- Papa parser module -->
-  <script src="js/papa.js" data-embed></script>
-  <!-- Interactive projects builder -->
-  <script type="text/javascript" src="js/projects-builder.js" async></script>
-  <!-- Interactive skills builder -->
-  <script type="text/javascript" src="js/skills-builder.js" async></script>
-  <!-- Interactive cv builder -->
-  <script type="text/javascript" src="js/cv-builder.js" async></script>
-  <!-- Typewriter -->
-  <script type="text/javascript" src="js/typewriter_effect.js" async></script>
-  <!-- Import Nav-Bar effect -->
-  <script type="text/javascript" src="js/nav-bar-buttons-color.js" async></script>
-  <!-- Import stylesheet -->
-  <link rel="stylesheet" href="./css/style.css" />
-  <!-- Desktop stylesheet -->
-  <link rel="stylesheet" href="./css/desktop_styles.css" />
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
@@ -58,16 +37,16 @@
       </div>
       <ul id="socialSites">
         <li>
-          <img class="logo" src="./images/github-logo.png" />
+          <div class="logo" id="githubLogo"></div>
           <a href="https://github.com/NetworkRock" target="_blank">Discover my code</a>
         </li>
         <li>
-          <img class="logo" src="./images/linkedIn-logo.png" />
+          <div class="logo" id="linkedInLogo"></div>
           <a href="https://www.linkedin.com/in/robin-leeb-838746208/"
             target="_blank">Need a specialist for your project?</a>
         </li>
         <li>
-          <img class="logo" src="./images/freecodecamp-logo.png" style="margin-top: 4px;" />
+          <div class="logo" id="freeCodeCampLogo" style="margin-top: 3vh;"></div>
           <a href="https://www.freecodecamp.org/networkrocker"
             target="_blank">Platform to learn</a>
         </li>
@@ -87,7 +66,7 @@
       </div>
       <div id="profile-section-container">
         <div id="profile-picture-container">
-          <img id="profile-picture" src="images/profile-picture.png" />
+          <div id="profile-picture"></div>
         </div>
         <div id="about-me-info">
           <p>
@@ -104,6 +83,7 @@
         </div>
       </div>
       <div id="interactive-cv"></div>
+      </div>
       <div id="clickable-timeline-container">
         <ul id="clickable-timeline"></ul>
       </div>
