@@ -1,12 +1,8 @@
 import $ from "jquery";
-
 import './css/style.css'
 import './css/desktop_styles.css'
-
 import './site.webmanifest.json'
-
 import './images/personal-website.jpg'
-
 import "./icons/apple-touch-icon.jpg"
 import "./icons/favicon-32x32.jpg"
 import "./icons/favicon-16x16.jpg"
