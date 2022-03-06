@@ -44,8 +44,8 @@ const buildCV = async () => {
           .append(
             $("<div/>")
               .addClass('flip-card')
-              .attr("id", index)
-              .attr(index === 0 ? { "style": "display:inline" } : {})
+              .addClass(index === 0 ? 'flip-card-show' : '')
+              .attr("id", `card-${index}`)
               .append(
                 $("<div/>")
                   .addClass('flip-card-inner')
@@ -65,26 +65,22 @@ const buildCV = async () => {
           )
         $('#clickable-timeline')
           .append($('<li/>')
+            .on('mouseenter', (element) => {
+              $('.flip-card-show').removeClass('flip-card-show')
+              $('.timeline-item-hover').removeClass('timeline-item-hover')
+              $('#card-' + index)
+                .addClass('flip-card-show')
+                .addClass("slide-in-fwd-center")
+              console.log(element.target)
+              $(element.target).addClass('timeline-item-hover')
+            })
             .addClass('timeline-item')
-            .append($('<button/>')
-              .addClass('timeline-link-item')
-              .attr('id', index)
-              .text(`${card.start} - ${card.end}`)
-            )
+            .attr('id', `timeline-item-'${index}`)
+            .append($('<span/>')
+              .css('border-bottom', '0.1em solid #27a594')
+              .text(`${card.start}`))
+            .append($('<span/>').text(`${card.end}`))
           )
-      })
-      $.each($('.timeline-link-item'), (index, button) => {
-        // Ignore empty data
-        $(button).on('click', (element) => {
-          $.each($('.flip-card'), (index, card) => {
-            if ($(card).attr("id") === $(element.target).attr("id")) {
-              $(card).css("display", "inline");
-              $(card).addClass("slide-in-fwd-center");
-            } else {
-              $(card).css("display", "none");
-            }
-          })
-        });
       })
     }
   });

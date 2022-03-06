@@ -31,6 +31,9 @@
   h3 {
     font-size: 1vw;
   }
+  span {
+    font-size: 1.2vw; 
+  }
   p, i {
     font-size: 0.9vw;
   }
