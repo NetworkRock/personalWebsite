@@ -48,6 +48,10 @@ h3 {
   font-size: 3vw;
 }
 
+span {
+  font-size: 3.2vw;
+}
+
 p, i {
   font-size: 2.3vw;
 }
@@ -377,8 +381,9 @@ p, i {
   margin: 0;
 }
 
-.timeline-item, .timeline-link-item {
+.timeline-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -391,16 +396,10 @@ p, i {
   border: none
 }
 
-.timeline-link-item:hover {
+.timeline-item-hover {
   background-color: #27a594;
   outline: 0;
 }
-
-.timeline-link-item:focus {
-  background-color: #27a594;
-  outline: 0;
-}
-
 
 /* Animation of the interactive cv cards */
 .flip-card {
@@ -408,6 +407,10 @@ p, i {
   width: 100%;
   perspective: 1000px;
   display: none;
+}
+
+.flip-card-show {
+  display: inline;
 }
 
 .flip-card-inner {
