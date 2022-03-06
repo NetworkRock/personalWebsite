@@ -1,31 +1,23 @@
-// Which texts should be written to the headline?
-var textsToType = ["Hello, I am Robin", "I'm a software professional"];
-// Get the elment in which the text should go
-var elementToTypewrite = document.getElementById("welcome-headline");
-// Get the cursor element
-var cursor = document.getElementById("cursor");
-// Make an iterator out of the text array
-var textsIterator = textsToType.values();
+import $ from "jquery";
 
-var startOverlay = document.getElementById("start-overlay");
-var welcomeHeadline = document.getElementById("welcome-headline");
-var cursor = document.getElementById("cursor");
-var navBar = document.getElementById("navbar");
+const textsToType = ["Hello, I am Robin", "I'm a software professional"];
+const elementToTypewrite = $("#welcome-headline");
+const cursor = $("#cursor");
+const textsIterator = textsToType.values();
+const startOverlay = $("#start-overlay");
+const welcomeHeadline = $("#welcome-headline");
+const navBar = $("#navbar");
+let deleteMode = false;
+let letterCounter = 0;
+let nextTextObject = textsIterator.next();
+let wordCounter = 1;
+let pauseWriting = true;
 
-var deleteMode = false;
-var letterCounter = 0;
-// Get first text
-var nextTextObject = textsIterator.next();
-var wordCounter = 1;
-var pauseWriting = true;
-
-
-
-function startAnimations() {
-  navBar.classList.add("fade-in");
-  startOverlay.classList.add("slide-to-right");
-  welcomeHeadline.classList.add("fade-out");
-  cursor.classList.add("fade-out");
+const startAnimations = () => {
+  navBar.addClass("fade-in");
+  startOverlay.addClass("slide-to-right");
+  welcomeHeadline.addClass("fade-out");
+  cursor.addClass("fade-out");
 }
 
 const writing = async () => {
@@ -40,10 +32,12 @@ const writing = async () => {
         if (!(wordCounter >= textsToType.length)) {
           // Pause a bit before continue writing
           if (pauseWriting) {
+            cursor.addClass('blinking-cursor')
             await pauseBeforeNextWord();
           }
           deletingLetters();
         } else {
+          cursor.addClass('blinking-cursor')
           await pauseBeforeStartAnimation();
           startAnimations();
         }
@@ -53,21 +47,20 @@ const writing = async () => {
   }, 70);
 }
 
-function typingLetters() {
-  elementToTypewrite.appendChild(
-    document.createTextNode(nextTextObject.value.charAt(letterCounter))
-  );
+const typingLetters = () => {
+  cursor.removeClass('blinking-cursor')
+  elementToTypewrite.append(nextTextObject.value.charAt(letterCounter))
   letterCounter++;
 }
-function deletingLetters() {
+const deletingLetters = () => {
+  cursor.removeClass('blinking-cursor')
   deleteMode = true;
   letterCounter--;
-  elementToTypewrite.removeChild(
-    elementToTypewrite.childNodes[letterCounter]
-  );
+  elementToTypewrite.text(elementToTypewrite.text().slice(0, letterCounter))
 }
 
-function pauseBeforeNextWord() {
+const pauseBeforeNextWord = () => {
+  cursor.addClass('blinking-cursor')
   return new Promise((resolve) => {
     setTimeout(() => {
       pauseWriting = false;
@@ -76,7 +69,7 @@ function pauseBeforeNextWord() {
   });
 }
 
-function pauseBeforeStartAnimation() {
+const pauseBeforeStartAnimation = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve();
@@ -84,7 +77,7 @@ function pauseBeforeStartAnimation() {
   });
 }
 
-function getNextText() {
+const getNextText = () => {
   nextTextObject = textsIterator.next();
   letterCounter = 0;
   wordCounter++;
