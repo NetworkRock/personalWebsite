@@ -8,10 +8,13 @@ import "./icons/favicon-32x32.jpg"
 import "./icons/favicon-16x16.jpg"
 import "./icons/favicon.ico"
 
-import buildCV from "./src/js/cv-builder";
-import buildProjects from "./src/js/projects-builder";
-import buildSkills from "./src/js/skills-builder";
+// CSV Files
+import cv from './csv/cv.csv'
+import projects from './csv/projects.csv'
+import skills from './csv/skills.csv'
+
 import writing from "./src/js/typewriter_effect";
+import { CSVBuilder } from "./src/js/csvBuilders";
 
 // Navigation Links Key Map
 const navigationLinks = {
@@ -31,9 +34,12 @@ const skillCirclesMap = [
 ];
 
 function init() {
-  buildProjects();
-  buildSkills();
-  buildCV();
+  const projectBuilder = new CSVBuilder.ProjectBuilder()
+  const cvBuilder = new CSVBuilder.CVBuilder()
+  const skillBuilder = new CSVBuilder.SkillBuilder()
+  new CSVBuilder(projects, projectBuilder.build).build()
+  new CSVBuilder(cv, cvBuilder.build).build()
+  new CSVBuilder(skills, skillBuilder.build).build()
   if (location.hash.length === 0) {
     writing();
     $('welcomeLink').addClass("nav-link-active");
