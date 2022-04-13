@@ -1,31 +1,30 @@
-Frontend,
-JavaScript,5
-TypeScript,5
-Angular,4
-Redux,5
-React,5
-Swift,3
-Android,3
-Jest,4
-jQuery,3
-Backend,
-Java,5
-Spring,4
-Node.js,4
-CouchDB,3
-JUnit,4
-Firebase,4
-Other Skills,
-Visual Studio Code,5
-IntelliJ,4
-Eclipse,4
-XCode,3
-Scrum,4
-CI /CD,4
-Atlassian Tools,4
-Git,4
-Media Skills,
-Final Cut Pro,5
-Cubase Pro,4
-Guitar Pro,4
-Gimp,5
+technologie,rating,category
+JavaScript,5,Frontend
+TypeScript,5,Frontend
+Angular,4,Frontend
+React,5,Frontend
+Redux,5,Frontend
+Swift,3,Frontend
+Android,3,Frontend
+React-Testing-Library,5,Frontend
+Jest,5,Frontend
+JUnit,4,Frontend
+jQuery,4,Frontend
+Java,5,Backend
+Node.js,4,Backend
+Spring,5,Backend
+Git,5,Backend
+REST,5,Backend
+Firebase,5,Backend
+Maven,4,Backend
+Visual Studio Code,5,Other
+IntelliJ,5,Other
+Eclipse,5,Other
+XCode,4,Other
+Scrum,5,Other
+CI /CD,4,Other
+Atlassian Tools,4,Other
+Final Cut Pro,5,Media
+Cubase Pro,4,Media
+Guitar Pro,4,Media
+Gimp,5,Media

@@ -1,16 +1,35 @@
 {
-  "plugins": [],
   "source": {
-      "includePattern": ".+\\.js(doc|x)?$",
-      "excludePattern": "(^|\\/|\\\\)_"
+    "include": [
+      "src/js"
+    ],
+    "includePattern": ".js$",
+    "excludePattern": "(node_modules/|docs)"
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true
   },
   "sourceType": "module",
   "tags": {
-      "allowUnknownTags": true,
-      "dictionaries": ["jsdoc","closure"]
+    "allowUnknownTags": false,
+    "dictionaries": [
+      "jsdoc",
+      "closure"
+    ]
   },
-  "templates": {
-      "cleverLinks": false,
-      "monospaceLinks": false
+  "opts": {
+    "encoding": "utf8",
+    "readme": "./README.md",
+    "destination": "./docs",
+    "recurse": true,
+    "verbose": true,
+    "template": "node_modules/clean-jsdoc-theme",
+    "theme_opts": {
+      "theme": "light"
+    }
   }
 }
