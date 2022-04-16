@@ -1,6 +1,22 @@
 import $ from "jquery";
+
+/**
+ * Describes a FlipCVCard
+ * @class
+ * @property  {jQuery<div>} flipCVCard
+*/
 export class FlipCVCard {
   flipCVCard = $("<div/>")
+  /**
+   * @constructs FlipCVCard
+   * @param  {number} index
+   * @param  {string} cardID
+   * @param  {string} company
+   * @param  {string} technologies
+   * @param  {string} project1
+   * @param  {string} project2
+   * @description By building the FlipCVCard all the raw string data is added inside jQuery elements
+   */
   constructor(
     index,
     cardID,
@@ -31,6 +47,11 @@ export class FlipCVCard {
           )
       )
   }
+  /**
+   * @function getFlipCVCard 
+   * @memberof FlipCVCard
+   * @returns {JQuery<HTMLElement>} The flipCVCard itself
+   */
   get getFlipCVCard() {
     return this.flipCVCard;
   }

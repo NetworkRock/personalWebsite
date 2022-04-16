@@ -1,8 +1,23 @@
 import $ from "jquery";
+
+/**
+ * Describes a Projecct
+ * @class
+ * @property  {string} imageName
+ * @property  {jQuery<a>} link
+ * @property  {jQuery<HTMLElement>} title
+*/
 export class Project {
   imageName = ''
   link = null
   title = $("<h3/>")
+  /**
+    * @constructs Project
+    * @param  {string} imageName
+    * @param  {string} title
+    * @param  {string} link
+    * @description By building a Project the raw string data from the file will be added to the jQuery elements
+    */
   constructor(imageName, title, link) {
     this.imageName = imageName
     this.title = this.title.text(title)
@@ -11,14 +26,28 @@ export class Project {
       'href': link
     } : {})
   }
-
+  /**
+   * @function getImagePath 
+   * @memberof Project
+   * @returns {Promise<string>}
+   */
   get getImagePath() {
     const image = this.importBackgroundImage(this.imageName)
     return image
   }
+  /**
+ * @function getProjectTitle 
+ * @memberof Project
+ * @returns {JQuery<HTMLElement>}
+ */
   get getProjectTitle() {
     return this.title;
   }
+  /**
+ * @function getProjectLink 
+ * @memberof Project
+ * @returns {jQuery<a>}
+ */
   get getProjectLink() {
     return this.link;
   }
@@ -29,7 +58,7 @@ export class Project {
  * @return {Promise<string>} - Promise of string  
  */
   importBackgroundImage = async (imageName) => {
-    if(imageName.length) {
+    if (imageName.length) {
       const { default: imagePath } = await import(`../../../images/${imageName}`);
       return imagePath
     }

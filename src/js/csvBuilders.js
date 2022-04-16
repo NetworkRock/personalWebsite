@@ -14,15 +14,41 @@ import { TimelineItem } from "./models/TimelineItem";
 import { SkillMap } from "./models/SkillMap";
 import { SkillCardGrid } from "./models/SkillCardGrid";
 
+/**
+ * Describes the CSVBuilder
+ * @class
+ * @property  {string} fileURL
+ * @property  {function} builder
+ * @classdesc 
+ * This class contains the different builder classes for different
+ * builder methodes and different fileURLs
+ */
 export class CSVBuilder {
-  file = null
+  fileURL = null
   builder = null
-  constructor(file, builder) {
-    this.file = file
+  /**
+   * @constructs CV
+   * @param  {string} fileURL
+   * @param  {function} builder
+   * @description By building a specific section in the website the raw string data from the files are used to be added to the jQuery elements
+   */
+  constructor(fileURL, builder) {
+    this.fileURL = fileURL
     this.builder = builder
   }
-
+  /**
+   * @class Describes the ProjectBuilder
+   * @memberof CSVBuilder
+   * @static
+   */
   static ProjectBuilder = class {
+      /**
+       * The specific build function which build the project-grid
+       * on the website.
+       * @function build 
+       * @memberof CSVBuilder.ProjectBuilder
+       * @param  {Project[]} projects
+       */
     async build(projects) {
       Object.values(projects).forEach(async (projectData) => {
         const project = new Project(
@@ -37,10 +63,20 @@ export class CSVBuilder {
         $('#project-grid').append(projectGridItem.getProjectItem)
       })
     }
-
   }
-
+  /**
+   * @class Describes the CVBuilder
+   * @memberof CSVBuilder
+   * @static
+   */
   static CVBuilder = class {
+    /**
+     * The specific build function which build the interactive-cv and the clickable-timline
+     * on the website.
+     * @function build
+     * @memberof CSVBuilder.CVBuilder
+     * @param  {CV[]} cvCards
+     */
     build(cvCards) {
       Object.values(cvCards).forEach((card, index) => {
         const cv = new CV(
@@ -72,11 +108,21 @@ export class CSVBuilder {
       })
     }
   }
-
+  /**
+   * @class Describes the SkillBuilder
+   * @memberof CSVBuilder
+   * @static
+   */
   static SkillBuilder = class {
+    /**
+     * The specific build function which build the skill section
+     * on the website.
+     * @function build
+     * @memberof CSVBuilder.SkillBuilder
+     * @param  {Skill[]} skills
+     */
     build(skills) {
       const skillMap = new SkillMap(skills).skillMap
-
       Object.keys(skillMap).forEach((category => {
         /**
           * Maximal rating for the skills
@@ -110,14 +156,16 @@ export class CSVBuilder {
       }))
     }
   }
-
+  /**
+   * Describes the build function which calls the parse function
+   * from the papa parse package which then parses the file content to 
+   * an javascript object.
+   * @function
+   */
   build() {
-    parse(this.file, {
+    parse(this.fileURL, {
       header: true,
       download: true,
-      /**
-       * @param {ParseResult<CV | Project | Skill>} parseResult
-       */
       complete: (parseResult) => {
         /**
          * @param {CV | Project | Skill[]} data

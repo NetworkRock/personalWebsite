@@ -1,6 +1,20 @@
 import $ from "jquery";
+/**
+ * Describes a SkillCardGrid
+ * @class
+ * @property  {jQuery<div>} skillCardGrid
+*/
 export class SkillCardGrid {
   skillCardGrid = $("<div/>")
+  /**
+   * @constructs SkillCardGrid
+   * @param  {string} category
+   * @param  {string[]} gridOnetechnologies
+   * @param  {string[]} gridTwotechnologies
+   * @param  {string} ratings
+   * @param  {number} maxRating
+   * @description By building the SkillCardGrid all the raw string data is added inside jQuery elements
+   */
   constructor(
     category,
     gridOnetechnologies,
@@ -27,6 +41,11 @@ export class SkillCardGrid {
       ))
 
   }
+  /**
+   * @function getSkillCardGrid 
+   * @memberof SkillCardGrid
+   * @returns {JQuery<HTMLElement>} The skillCardGrid itself
+   */
   get getSkillCardGrid() {
     return this.skillCardGrid;
   }
