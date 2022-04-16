@@ -1,8 +1,18 @@
 import $ from "jquery";
 import { parseISO } from 'date-fns'
 
+/**
+ * Describes a TimelineItem
+ * @class
+ */
 export class TimelineItem {
   timeLineItem = $('<li/>')
+  /**
+ * @constructs TimelineItem
+ * @param  {number} index
+ * @param  {JQuery} start
+ * @param  {JQuery} end
+ */
   constructor(
     index,
     start,
@@ -14,7 +24,7 @@ export class TimelineItem {
       parseISO(start)
       parseISO(end)
     } catch (error) {
-      throw(error)
+      throw (error)
     }
 
     this.timeLineItem.on('mouseenter', (element) => {
@@ -32,6 +42,11 @@ export class TimelineItem {
       .append(start)
       .append(end)
   }
+  /**
+   * @function getTimelineItem 
+   * @memberof TimelineItem
+   * @returns {JQuery<HTMLElement>} The timelineItem itself
+   */
   get getTimelineItem() {
     return this.timeLineItem;
   }
