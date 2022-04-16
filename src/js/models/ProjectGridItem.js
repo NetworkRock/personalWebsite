@@ -1,8 +1,20 @@
 import $ from "jquery";
+/**
+ * Describes a ProjectGridItem
+ * @class
+ * @property  {jQuery<div>} projectGridItem
+*/
 export class ProjectGridItem {
-  _projectGridItem = $("<div/>")
+  projectGridItem = $("<div/>")
+  /**
+   * @constructs ProjectGridItem
+   * @param  {string} backgroundImagePath
+   * @param  {string} title
+   * @param  {string} link
+   * @description By building the ProjectGridItem all the raw string data is added inside jQuery elements
+   */
   constructor(backgroundImagePath, title, link) {
-    this._projectGridItem
+    this.projectGridItem
       .addClass('project-grid-item')
       .css('background-image', `url(${backgroundImagePath})`)
       .append($("<div/>").addClass('project-overlay')
@@ -10,7 +22,12 @@ export class ProjectGridItem {
           .append(title)))
       .append(link)
   }
+  /**
+   * @function getProjectItem 
+   * @memberof ProjectGridItem
+   * @returns {JQuery<HTMLElement>} The flipCVCard itself
+   */
   get getProjectItem() {
-    return this._projectGridItem;
+    return this.projectGridItem;
   }
 }

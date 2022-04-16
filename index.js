@@ -33,6 +33,10 @@ const skillCirclesMap = [
   document.getElementsByClassName("fill-up-one-circle"),
 ];
 
+/**
+ * This function triggers on each onload of the website
+ * @function init
+ */
 function init() {
   const projectBuilder = new CSVBuilder.ProjectBuilder()
   const cvBuilder = new CSVBuilder.CVBuilder()
@@ -52,12 +56,15 @@ function init() {
   }
 }
 
-function resetByLocationChanged() {
-  // Remove class for active link on every link
+/**
+ * Remove class for active link on every link. 
+ * Remove circle animation on all circleElements
+ * @function resetCSSClasses
+ */
+function resetCSSClasses() {
   Object.values(navigationLinks).forEach((linkElement) => {
     linkElement.removeClass("nav-link-active");
   });
-  // Remoce circle animation on all circleElements
   skillCirclesMap.forEach((circleElement) => {
     for (var i = 0; i < circleElement.length; i++) {
       circleElement[i].classList.remove("circle-animation");
@@ -65,15 +72,19 @@ function resetByLocationChanged() {
   });
 }
 
+/**
+ * This function triggers on every location changed
+ * Adding the background color for the current selected nav link
+ * Add the circle animation
+ * @function locationHashChanged
+ */
 function locationHashChanged() {
-  resetByLocationChanged();
-  // Adding the background color for the current selected nav link
+  resetCSSClasses();
   navigationLinks[
     Object.keys(navigationLinks).find(
       (linkElement) => linkElement === location.hash
     )
   ].addClass("nav-link-active");
-  // Add the circle animation
   if (location.hash === "#skill") {
     skillCirclesMap.forEach((circleElement) => {
       for (var i = 0; i < circleElement.length; i++) {
