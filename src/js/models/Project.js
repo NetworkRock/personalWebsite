@@ -4,8 +4,8 @@ import $ from "jquery";
  * Describes a Projecct
  * @class
  * @property  {string} imageName
- * @property  {jQuery<a>} link
- * @property  {jQuery<HTMLElement>} title
+ * @property  {jQuery} link
+ * @property  {JQuery<HTMLElement>} title
 */
 export class Project {
   imageName = ''
@@ -34,22 +34,6 @@ export class Project {
   get getImagePath() {
     const image = this.importBackgroundImage(this.imageName)
     return image
-  }
-  /**
- * @function getProjectTitle 
- * @memberof Project
- * @returns {JQuery<HTMLElement>}
- */
-  get getProjectTitle() {
-    return this.title;
-  }
-  /**
- * @function getProjectLink 
- * @memberof Project
- * @returns {jQuery<a>}
- */
-  get getProjectLink() {
-    return this.link;
   }
 
   /**

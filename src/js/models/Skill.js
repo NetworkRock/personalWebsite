@@ -1,6 +1,9 @@
 /**
  * Describes a Skill
  * @class
+ * @property  {string} technologie
+ * @property  {string} rating
+ * @property  {string} category
  */
 export class Skill {
   technologie = null

@@ -27,7 +27,7 @@ export class CSVBuilder {
   fileURL = null
   builder = null
   /**
-   * @constructs CV
+   * @constructs CSVBuilder
    * @param  {string} fileURL
    * @param  {function} builder
    * @description By building a specific section in the website the raw string data from the files are used to be added to the jQuery elements
@@ -42,13 +42,13 @@ export class CSVBuilder {
    * @static
    */
   static ProjectBuilder = class {
-      /**
-       * The specific build function which build the project-grid
-       * on the website.
-       * @function build 
-       * @memberof CSVBuilder.ProjectBuilder
-       * @param  {Project[]} projects
-       */
+    /**
+     * The specific build function which build the project-grid
+     * on the website.
+     * @function build 
+     * @memberof CSVBuilder.ProjectBuilder
+     * @param  {Object[]} projects
+     */
     async build(projects) {
       Object.values(projects).forEach(async (projectData) => {
         const project = new Project(
@@ -57,8 +57,8 @@ export class CSVBuilder {
           projectData.link)
         const projectGridItem = new ProjectGridItem(
           await project.getImagePath,
-          project.getProjectTitle,
-          project.getProjectLink
+          project.title,
+          project.link
         )
         $('#project-grid').append(projectGridItem.getProjectItem)
       })
@@ -75,7 +75,7 @@ export class CSVBuilder {
      * on the website.
      * @function build
      * @memberof CSVBuilder.CVBuilder
-     * @param  {CV[]} cvCards
+     * @param  {Object[]} cvCards
      */
     build(cvCards) {
       Object.values(cvCards).forEach((card, index) => {
