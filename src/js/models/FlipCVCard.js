@@ -11,10 +11,10 @@ export class FlipCVCard {
    * @constructs FlipCVCard
    * @param  {number} index
    * @param  {string} cardID
-   * @param  {string} company
-   * @param  {string} technologies
-   * @param  {string} project1
-   * @param  {string} project2
+   * @param  {JQuery<HTMLElement>} company
+   * @param  {JQuery<HTMLElement>} technologies
+   * @param  {JQuery<HTMLElement>} project1
+   * @param  {JQuery<HTMLElement>} project2
    * @description By building the FlipCVCard all the raw string data is added inside jQuery elements
    */
   constructor(
