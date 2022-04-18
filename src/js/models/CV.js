@@ -3,13 +3,13 @@ import $ from "jquery";
 /**
  * Describes a CV with jQuery elements
  * @class
- * @property  {jQuery<h1>} company
- * @property  {jQuery<h2>} role
- * @property  {jQuery<span>} start
- * @property  {jQuery<span>} end
- * @property  {jQuery<p>} technologies
- * @property  {jQuery<p>} project1
- * @property  {jQuery<p>} project2
+ * @property  {JQuery<HTMLElement>} company
+ * @property  {JQuery<HTMLElement>} role
+ * @property  {JQuery<HTMLElement>} start
+ * @property  {JQuery<HTMLElement>} end
+ * @property  {JQuery<HTMLElement>} technologies
+ * @property  {JQuery<HTMLElement>} project1
+ * @property  {JQuery<HTMLElement>} project2
 */
 export class CV {
   company = $("<h1/>")

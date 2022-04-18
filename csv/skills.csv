@@ -12,14 +12,14 @@ JUnit,4,Frontend
 jQuery,4,Frontend
 Java,5,Backend
 Node.js,4,Backend
-Spring,5,Backend
+Spring,4,Backend
 Git,5,Backend
 REST,5,Backend
 Firebase,5,Backend
 Maven,4,Backend
 Visual Studio Code,5,Other
-IntelliJ,5,Other
-Eclipse,5,Other
+IntelliJ,4,Other
+Eclipse,4,Other
 XCode,4,Other
 Scrum,5,Other
 CI /CD,4,Other

@@ -13,8 +13,9 @@ import cv from './csv/cv.csv'
 import projects from './csv/projects.csv'
 import skills from './csv/skills.csv'
 
-import writing from "./src/js/typewriter_effect";
 import { CSVBuilder } from "./src/js/csvBuilders";
+import { Typewriter } from "./src/js/Typewriter";
+import { skillCirclesCSSClasses } from "./src/js/models/SkillCardGrid";
 
 // Navigation Links Key Map
 const navigationLinks = {
@@ -24,17 +25,8 @@ const navigationLinks = {
   "#projects": $("#projectsLink"),
 };
 
-// Skill circle map
-const skillCirclesMap = [
-  document.getElementsByClassName("fill-up-five-circles"),
-  document.getElementsByClassName("fill-up-four-circles"),
-  document.getElementsByClassName("fill-up-three-circles"),
-  document.getElementsByClassName("fill-up-two-circles"),
-  document.getElementsByClassName("fill-up-one-circle"),
-];
-
 /**
- * This function triggers on each onload of the website
+ * Triggers on each onload of the website
  * @function init
  */
 function init() {
@@ -44,55 +36,78 @@ function init() {
   new CSVBuilder(projects, projectBuilder.build).build()
   new CSVBuilder(cv, cvBuilder.build).build()
   new CSVBuilder(skills, skillBuilder.build).build()
-  if (location.hash.length === 0) {
-    writing();
-    $('welcomeLink').addClass("nav-link-active");
+  locationHashChanged()
+}
+
+/**
+ * Triggers on every location changed and also called here {@link init}.
+ * @function locationHashChanged
+ */
+function locationHashChanged() {
+  const currentLocation = navigationLinks[
+    Object.keys(navigationLinks).find(
+      (linkElement) => linkElement === location.hash
+    )
+  ]
+  if (currentLocation) {
+    removeStartAnimation()
+    scrollAfterReload(currentLocation)
+    toggleCircleAnimation(currentLocation)
+    toggleNavigationLink(currentLocation)
   } else {
-    $('#navBar').css("opacity", 1);
-    $('#start-overlay').css("width", '0vw');
-    $('#start-overlay').css("backgroundColor", 'rgba(63,63,67,1)');
-    $('#welcome-headline').css("opacity", 0);
-    $('#cursor').css("opacity", 0);
+    const typewriter = new Typewriter(["Hello, I am Robin", "I'm a software professional"], $("#welcome-headline"))
+    typewriter.writing()
   }
 }
 
 /**
- * Remove class for active link on every link. 
- * Remove circle animation on all circleElements
- * @function resetCSSClasses
+ * Scrolls to the position especially in the case the site
+ * gets reloaded with a specific location
+ * @function scrollAfterReload
  */
-function resetCSSClasses() {
-  Object.values(navigationLinks).forEach((linkElement) => {
-    linkElement.removeClass("nav-link-active");
-  });
-  skillCirclesMap.forEach((circleElement) => {
+function scrollAfterReload(currentLocation) {
+  if (currentLocation.attr('onclick') === undefined) {
+    document.location = currentLocation.attr('href');
+  } else {
+    currentLocation.click();
+  }
+}
+
+/**
+ * Removes all the css classes which gets triggerd by the initial start animation
+ * @function removeStartAnimation
+ */
+function removeStartAnimation() {
+  $('#start-overlay').css("width", '0vw');
+  $('#start-overlay').css("backgroundColor", 'rgba(63,63,67,1)');
+  $('#welcome-headline').css("opacity", 0);
+  $('#cursor').css("opacity", 0);
+  $('#navbar').css("opacity", 1);
+}
+
+/**
+ * Toggles the circle animation that on each time the skill screen is reached
+ * the circle animation starts again
+ * @function toggleCircleAnimation
+ */
+function toggleCircleAnimation(currentLocation) {
+  skillCirclesCSSClasses.forEach((circleElement) => {
     for (var i = 0; i < circleElement.length; i++) {
-      circleElement[i].classList.remove("circle-animation");
+      currentLocation.attr('id') === "skillLink" ? circleElement[i].classList.add("circle-animation") : circleElement[i].classList.remove("circle-animation");
     }
   });
 }
 
 /**
- * This function triggers on every location changed
- * Adding the background color for the current selected nav link
- * Add the circle animation
- * @function locationHashChanged
+ * Toggles the navigation links on each location change and set the active css class for it
+ * @function toggleNavigationLink
  */
-function locationHashChanged() {
-  resetCSSClasses();
-  navigationLinks[
-    Object.keys(navigationLinks).find(
-      (linkElement) => linkElement === location.hash
-    )
-  ].addClass("nav-link-active");
-  if (location.hash === "#skill") {
-    skillCirclesMap.forEach((circleElement) => {
-      for (var i = 0; i < circleElement.length; i++) {
-        circleElement[i].classList.add("circle-animation");
-      }
-    });
-  }
+function toggleNavigationLink(currentLocation) {
+  Object.values(navigationLinks).forEach((linkElement) => {
+    currentLocation === linkElement ? linkElement.addClass("nav-link-active") : linkElement.removeClass("nav-link-active");
+  });
 }
+
 
 onhashchange = locationHashChanged
 onload = init

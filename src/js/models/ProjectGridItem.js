@@ -9,8 +9,8 @@ export class ProjectGridItem {
   /**
    * @constructs ProjectGridItem
    * @param  {string} backgroundImagePath
-   * @param  {string} title
-   * @param  {string} link
+   * @param  {JQuery<HTMLElement>} title
+   * @param  {jQuery} link
    * @description By building the ProjectGridItem all the raw string data is added inside jQuery elements
    */
   constructor(backgroundImagePath, title, link) {

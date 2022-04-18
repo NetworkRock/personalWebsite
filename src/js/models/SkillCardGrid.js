@@ -6,12 +6,13 @@ import $ from "jquery";
 */
 export class SkillCardGrid {
   skillCardGrid = $("<div/>")
+
   /**
    * @constructs SkillCardGrid
    * @param  {string} category
-   * @param  {string[]} gridOnetechnologies
-   * @param  {string[]} gridTwotechnologies
-   * @param  {string} ratings
+   * @param  {string[][]} gridOnetechnologies
+   * @param  {string[][]} gridTwotechnologies
+   * @param  {Object} ratings
    * @param  {number} maxRating
    * @description By building the SkillCardGrid all the raw string data is added inside jQuery elements
    */
@@ -50,3 +51,16 @@ export class SkillCardGrid {
     return this.skillCardGrid;
   }
 }
+
+/**
+ * @constant skillCirclesCSSClasses 
+ * @memberof SkillCardGrid
+ * The skillCirclesCSSClasses itself
+ */
+export const skillCirclesCSSClasses = [
+  document.getElementsByClassName("fill-up-five-circles"),
+  document.getElementsByClassName("fill-up-four-circles"),
+  document.getElementsByClassName("fill-up-three-circles"),
+  document.getElementsByClassName("fill-up-two-circles"),
+  document.getElementsByClassName("fill-up-one-circle"),
+];
