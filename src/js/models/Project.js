@@ -1,4 +1,7 @@
-import $ from "jquery";
+import jq from "jquery";
+var jsdom = require('jsdom');
+
+const $ = jq(new jsdom.JSDOM().window);
 
 /**
  * Describes a Projecct
