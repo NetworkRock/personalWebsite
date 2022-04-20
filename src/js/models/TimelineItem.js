@@ -1,5 +1,9 @@
-import $ from "jquery";
-import { parseISO } from 'date-fns'
+import jq from "jquery";
+import { isValid, parseISO } from 'date-fns'
+
+var jsdom = require('jsdom');
+
+const $ = jq(new jsdom.JSDOM().window);
 
 /**
  * Describes a TimelineItem
@@ -19,13 +23,8 @@ export class TimelineItem {
     end,
   ) {
 
-    // Check if date is in ISO standard
-    try {
-      parseISO(start)
-      parseISO(end)
-    } catch (error) {
-      throw (error)
-    }
+    this.isValidDateString(start.text())
+    this.isValidDateString(end.text())
 
     this.timeLineItem.on('mouseenter', (element) => {
       $('.flip-card-show').removeClass('flip-card-show')
@@ -41,6 +40,7 @@ export class TimelineItem {
       .attr('id', `timeline-item-'${index}`)
       .append(start)
       .append(end)
+
   }
   /**
    * @function getTimelineItem 
@@ -49,5 +49,16 @@ export class TimelineItem {
    */
   get getTimelineItem() {
     return this.timeLineItem;
+  }
+
+  /**
+   * Checks if a string is a valid ISO standard date
+   * @function getTimelineItem 
+   * @memberof TimelineItem
+   * @param {string} dateString
+   */
+  isValidDateString(dateString) {
+    // Check if date is in ISO standard
+    return isValid(parseISO(dateString))
   }
 }
