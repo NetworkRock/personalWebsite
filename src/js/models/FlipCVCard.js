@@ -1,5 +1,3 @@
-import $ from "jquery";
-
 /**
  * Describes a FlipCVCard
  * @class
