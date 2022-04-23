@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   entry: './index.js',
@@ -27,9 +28,15 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-  plugins: [new HtmlWebpackPlugin({ 
-    template: 'index.html',
-    favicon: './icons/favicon.ico',
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      favicon: './icons/favicon.ico',
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    })
+  ],
   mode: process.env.NODE_ENV === "production" ? "production" : "development"
 }

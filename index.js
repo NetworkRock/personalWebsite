@@ -1,4 +1,3 @@
-import $ from "jquery";
 import './css/style.css'
 import './css/desktop_styles.css'
 import './site.webmanifest.json'

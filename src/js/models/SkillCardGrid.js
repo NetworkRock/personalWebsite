@@ -1,4 +1,3 @@
-import $ from "jquery";
 /**
  * Describes a SkillCardGrid
  * @class

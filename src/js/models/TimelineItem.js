@@ -1,9 +1,4 @@
-import jq from "jquery";
 import { isValid, parseISO } from 'date-fns'
-
-var jsdom = require('jsdom');
-
-const $ = jq(new jsdom.JSDOM().window);
 
 /**
  * Describes a TimelineItem
