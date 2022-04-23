@@ -1,4 +1,3 @@
-import $ from "jquery";
 
 /**
  * Describes the Typewriter

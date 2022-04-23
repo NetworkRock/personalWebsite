@@ -1,11 +1,9 @@
-import { parse, ParseResult } from "papaparse"
+import { parse } from "papaparse"
 
 // Models
 import { CV } from "./models/CV";
 import { Project } from "./models/Project";
 import { Skill } from "./models/Skill";
-
-import $ from "jquery";
 
 // Models
 import { ProjectGridItem } from "./models/ProjectGridItem";

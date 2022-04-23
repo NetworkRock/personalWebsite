@@ -5,6 +5,9 @@
     "target": "ES2017",
     "checkJs": true
   },
-  "include": ["src/**/*", "index.js"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*", "index.js", "setup.jest.js"],
+  "exclude": ["node_modules"],
+  "globals": {
+    "$": "writable"
+  }
 }

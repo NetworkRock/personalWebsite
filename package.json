@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "module": "commonjs",
   "scripts": {
     "start": "webpack serve",
-    "test": "jest --collectCoverage",
+    "testCoverage": "jest --collectCoverage",
+    "test": "jest --watchAll",
     "build": "NODE_ENV='production' webpack",
     "doc": "node_modules/.bin/jsdoc --configure jsdoc.json --verbose"
   },
@@ -20,11 +22,10 @@
   },
   "homepage": "https://github.com/NetworkRock/personalWebsite#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.16.11",
     "@types/jest": "^27.4.1",
     "@types/papaparse": "^5.3.2",
     "babel-jest": "^27.5.1",
-    "babel-loader": "^8.2.3",
+    "babel-loader": "^8.2.5",
     "css-loader": "^6.6.0",
     "csv-loader": "^3.0.3",
     "html-webpack-plugin": "^5.5.0",
@@ -33,11 +34,13 @@
     "raw-loader": "^4.0.2",
     "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",
-    "webpack": "^5.69.1",
+    "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
     "clean-jsdoc-theme": "^3.3.4",
     "date-fns": "^2.28.0",
     "jquery": "^3.6.0",

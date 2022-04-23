@@ -1,4 +1,3 @@
-import $ from "jquery";
 /**
  * Describes a ProjectGridItem
  * @class
