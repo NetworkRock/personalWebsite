@@ -48,18 +48,20 @@ export class CSVBuilder {
      * @param  {Object[]} projects
      */
     async build(projects) {
-      Object.values(projects).forEach(async (projectData) => {
-        const project = new Project(
-          projectData.imageName,
-          projectData.title,
-          projectData.link)
-        const projectGridItem = new ProjectGridItem(
-          await project.getImagePath,
-          project.title,
-          project.link
-        )
-        $('#project-grid').append(projectGridItem.getProjectItem)
-      })
+      if (Project.validateProjects(projects)) {
+        Object.values(projects).forEach(async (projectData) => {
+          const project = new Project(
+            projectData.imageName,
+            projectData.title,
+            projectData.link)
+          const projectGridItem = new ProjectGridItem(
+            await project.getImagePath,
+            project.title,
+            project.link
+          )
+          $('#project-grid').append(projectGridItem.getProjectItem)
+        })
+      }
     }
   }
   /**
@@ -76,34 +78,36 @@ export class CSVBuilder {
      * @param  {Object[]} cvCards
      */
     build(cvCards) {
-      Object.values(cvCards).forEach((card, index) => {
-        const cv = new CV(
-          card.company,
-          card.role,
-          card.start,
-          card.end,
-          card.technologies,
-          card.project1,
-          card.project2,
-        )
-        const flipCVCard = new FlipCVCard(
-          index,
-          `card-${index}`,
-          cv.company,
-          cv.role,
-          cv.technologies,
-          cv.project1,
-          cv.project2
-        )
-        const timelineItem = new TimelineItem(
-          index,
-          cv.start,
-          cv.end
-        )
+      if (CV.validateCV(cvCards)) {
+        Object.values(cvCards).forEach((card, index) => {
+          const cv = new CV(
+            card.company,
+            card.role,
+            card.start,
+            card.end,
+            card.technologies,
+            card.project1,
+            card.project2,
+          )
+          const flipCVCard = new FlipCVCard(
+            index,
+            `card-${index}`,
+            cv.company,
+            cv.role,
+            cv.technologies,
+            cv.project1,
+            cv.project2
+          )
+          const timelineItem = new TimelineItem(
+            index,
+            cv.start,
+            cv.end
+          )
 
-        $('#interactive-cv').append(flipCVCard.getFlipCVCard)
-        $('#clickable-timeline').append(timelineItem.getTimelineItem)
-      })
+          $('#interactive-cv').append(flipCVCard.getFlipCVCard)
+          $('#clickable-timeline').append(timelineItem.getTimelineItem)
+        })
+      }
     }
   }
   /**
@@ -120,38 +124,40 @@ export class CSVBuilder {
      * @param  {Skill[]} skills
      */
     build(skills) {
-      const skillMap = new SkillMap(skills).skillMap
-      Object.keys(skillMap).forEach((category => {
-        /**
-          * Maximal rating for the skills
-          * @type {number}
-          */
-        const maxRating = 5
-        /**
-          * Possible rating css classes
-          * @type {Object<number, string>}
-          */
-        const ratings = {
-          5: 'fill-up-five-circles',
-          4: 'fill-up-four-circles',
-          3: 'fill-up-three-circles',
-          2: 'fill-up-two-circles',
-          1: 'fill-up-one-circle'
-        }
-        const technologiesAmount = Object.keys(skillMap[category]).length
-        const spliceIndex = Math.ceil(technologiesAmount / 2)
-        const gridOnetechnologies = Object.entries(skillMap[category])
-        const gridTwotechnologies = gridOnetechnologies.splice(0, spliceIndex)
+      if (Skill.validateSkills(skills)) {
+        const skillMap = new SkillMap(skills).skillMap
+        Object.keys(skillMap).forEach((category => {
+          /**
+            * Maximal rating for the skills
+            * @type {number}
+            */
+          const maxRating = 5
+          /**
+            * Possible rating css classes
+            * @type {Object<number, string>}
+            */
+          const ratings = {
+            5: 'fill-up-five-circles',
+            4: 'fill-up-four-circles',
+            3: 'fill-up-three-circles',
+            2: 'fill-up-two-circles',
+            1: 'fill-up-one-circle'
+          }
+          const technologiesAmount = Object.keys(skillMap[category]).length
+          const spliceIndex = Math.ceil(technologiesAmount / 2)
+          const gridOnetechnologies = Object.entries(skillMap[category])
+          const gridTwotechnologies = gridOnetechnologies.splice(0, spliceIndex)
 
-        const skillCardGrid = new SkillCardGrid(
-          category,
-          gridOnetechnologies,
-          gridTwotechnologies,
-          ratings,
-          maxRating
-        )
-        $('#it-skills').append(skillCardGrid.getSkillCardGrid)
-      }))
+          const skillCardGrid = new SkillCardGrid(
+            category,
+            gridOnetechnologies,
+            gridTwotechnologies,
+            ratings,
+            maxRating
+          )
+          $('#it-skills').append(skillCardGrid.getSkillCardGrid)
+        }))
+      }
     }
   }
   /**
@@ -173,6 +179,7 @@ export class CSVBuilder {
           console.warn(meta)
           console.error(errors)
         }
+        console.log(data)
         this.builder(data)
       }
     });

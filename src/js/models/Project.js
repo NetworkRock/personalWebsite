@@ -45,4 +45,17 @@ export class Project {
       return imagePath
     }
   }
+
+  /**
+ * This validateProject function is checking if the file input is valid for a project object which gets later build by the constructor.
+ * @function validateProjects 
+ * @memberof Project
+ * @param  {Object[]} projects
+ * @returns {Boolean}
+ */
+  static validateProjects(projects) {
+    const isProject = projects.filter((project) => ('title' in project && 'link' in project && 'imageName' in project)
+      && Object.keys(project).length === 3)
+    return isProject.length > 0
+  }
 }

@@ -45,4 +45,26 @@ export class CV {
     this.project1.text(project1)
     this.project2.text(project2)
   }
+
+
+  /**
+ * This validateProject function is checking if the file input is valid for a project object which gets later build by the constructor.
+ * @function validateCV 
+ * @memberof Project
+ * @param  {Object[]} CVs
+ * @returns {Boolean}
+ */
+  static validateCV(CVs) {
+    const isCV = CVs.filter((CV) => (
+      'start' in CV &&
+      'end' in CV &&
+      'company' in CV &&
+      'role' in CV &&
+      'technologies' in CV &&
+      'project1' in CV &&
+      'project2' in CV
+    )
+      && Object.keys(CV).length === 7)
+    return isCV.length > 0
+  }
 }
