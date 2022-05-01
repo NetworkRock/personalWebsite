@@ -9,7 +9,7 @@ export class SkillMap {
   skillMap = {}
   /**
    * @constructs SkillMap
-   * @param  {Skill[]} skills
+   * @param  {Object[]} skills
    * @description By building the SkillMap we create from the skills itself a better data structure for iterating later
    * over this map. See {@link CSVBuilder.SkillBuilder}
    */
