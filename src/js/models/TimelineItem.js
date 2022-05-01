@@ -23,16 +23,23 @@ export class TimelineItem {
 
     this.timeLineItem.on('mouseenter', (element) => {
       $('.flip-card-show').removeClass('flip-card-show')
-      if (element.target.nodeName === 'LI')
+      if (element.target.nodeName === 'SPAN') {
+        console.log($(element.target).parent())
+        $(element.target).parent().removeClass('timeline-item-hover')
+      } else {
         $('.timeline-item-hover').removeClass('timeline-item-hover')
+      }
       $('#card-' + index)
         .addClass('flip-card-show')
         .addClass("slide-in-fwd-center")
-      if (element.target.nodeName === 'LI')
+      if (element.target.nodeName === 'SPAN')
+      $(element.target).parent().addClass('timeline-item-hover')
+      else 
         $(element.target).addClass('timeline-item-hover')
+       
     })
       .addClass('timeline-item')
-      .attr('id', `timeline-item-'${index}`)
+      .attr('id', `timeline-item-${index}`)
       .append(start)
       .append(end)
 
