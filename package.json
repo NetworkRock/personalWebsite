@@ -6,8 +6,8 @@
   "module": "commonjs",
   "scripts": {
     "start": "webpack serve",
-    "testCoverage": "jest --collectCoverage",
-    "test": "jest --watchAll",
+    "testCoverage": "jest",
+    "testWatch": "jest --watchAll",
     "build": "NODE_ENV='production' webpack",
     "doc": "node_modules/.bin/jsdoc --configure jsdoc.json --verbose"
   },
