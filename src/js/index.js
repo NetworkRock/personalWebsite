@@ -1,20 +1,20 @@
-import './css/style.css'
-import './css/desktop_styles.css'
-import './site.webmanifest.json'
-import './images/personal-website.jpg'
-import "./icons/apple-touch-icon.jpg"
-import "./icons/favicon-32x32.jpg"
-import "./icons/favicon-16x16.jpg"
-import "./icons/favicon.ico"
+import '../../css/style.css'
+import '../../css/desktop_styles.css'
+import '../../site.webmanifest.json'
+import '../../images/personal-website.jpg'
+import "../../icons/apple-touch-icon.jpg"
+import "../../icons/favicon-32x32.jpg"
+import "../../icons/favicon-16x16.jpg"
+import "../../icons/favicon.ico"
 
 // CSV Files
-import cv from './csv/cv.csv'
-import projects from './csv/projects.csv'
-import skills from './csv/skills.csv'
+import cv from '../../csv/cv.csv'
+import projects from '../../csv/projects.csv'
+import skills from '../../csv/skills.csv'
 
-import { CSVBuilder } from "./src/js/csvBuilders";
-import { Typewriter } from "./src/js/Typewriter";
-import { skillCirclesCSSClasses } from "./src/js/models/SkillCardGrid";
+import { CSVBuilder } from "./csvBuilders";
+import { Typewriter } from "./Typewriter";
+import { skillCirclesCSSClasses } from "./models/SkillCardGrid";
 
 // Navigation Links Key Map
 const navigationLinks = {
@@ -42,12 +42,13 @@ function init() {
  * Triggers on every location changed and also called here {@link init}.
  * @function locationHashChanged
  */
-function locationHashChanged() {
+export function locationHashChanged() {
   const currentLocation = navigationLinks[
     Object.keys(navigationLinks).find(
       (linkElement) => linkElement === location.hash
     )
   ]
+
   if (currentLocation) {
     removeStartAnimation()
     scrollAfterReload(currentLocation)
@@ -108,5 +109,5 @@ function toggleNavigationLink(currentLocation) {
 }
 
 
-onhashchange = locationHashChanged
-onload = init
+window.onhashchange = locationHashChanged
+window.onload = init
