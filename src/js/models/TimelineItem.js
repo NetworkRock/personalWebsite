@@ -24,7 +24,6 @@ export class TimelineItem {
     this.timeLineItem.on('mouseenter', (element) => {
       $('.flip-card-show').removeClass('flip-card-show')
       if (element.target.nodeName === 'SPAN') {
-        console.log($(element.target).parent())
         $(element.target).parent().removeClass('timeline-item-hover')
       } else {
         $('.timeline-item-hover').removeClass('timeline-item-hover')

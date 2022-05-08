@@ -179,7 +179,6 @@ export class CSVBuilder {
           console.warn(meta)
           console.error(errors)
         }
-        console.log(data)
         this.builder(data)
       }
     });
