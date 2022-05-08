@@ -3,7 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: './index.js',
+  entry: './src/js/index.js',
   module: {
     rules: [
       {

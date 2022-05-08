@@ -68,7 +68,9 @@ export class Typewriter {
           } else {
             this.#cursor.addClass('blinking-cursor')
             await this.#pauseBeforeStartAnimation();
-            this.#startAnimations();
+            await this.#startAnimations();
+            // Important to stop jump out of the loop
+            return
           }
         }
       }
@@ -81,7 +83,7 @@ export class Typewriter {
    * Typewriter~startAnimations
    * Start the anination after the text is written
    */
-  #startAnimations = () => {
+  #startAnimations = async () => {
     this.#navBar.addClass("fade-in");
     this.#startOverlay.addClass("slide-to-right");
     this.elementToTypewrite.addClass("fade-out");
