@@ -1,22 +1,42 @@
+const build = jest.fn()
+
 import { CSVBuilder } from "../csvBuilders"
+import * as papa from "papaparse"
 
-
-const build = jest.fn();
+let csvBuilder = undefined
+let spyBuild = undefined
 
 describe('CSVBuilder', () => {
 
-  test('call build with papa parse methode with correct data', async () => {
-    const csvBuilder = new CSVBuilder('someFile', build)
-    const spy = jest.spyOn(csvBuilder, 'build');
+  beforeEach(() => {
+    csvBuilder = new CSVBuilder('', build)
+    spyBuild = jest.spyOn(csvBuilder, 'build')
     csvBuilder.build()
-    expect(spy).toHaveBeenCalled();
-  });
+  })
+
+  afterEach(() => {
+    jest.clearAllMocks
+  })
 
   test('call build with papa parse methode without fileURL', async () => {
-    const csvBuilder = new CSVBuilder('', build)
-    const spy = jest.spyOn(csvBuilder, 'build');
-    csvBuilder.build()
-    expect(spy).toThrow('Cannot read properties of undefined (reading \'fileURL\')');
+    expect(spyBuild).toThrow('Cannot read properties of undefined (reading \'fileURL\')');
+  });
+
+  test('should throw custom error by calling complete methode with undefined', async () => {
+    const spyComplete = jest.spyOn(csvBuilder, 'complete')
+    expect(() => csvBuilder.complete({ errors: [{ message: 'ERR' }] })).toThrowError("ERR")
+    expect(spyComplete).toBeCalledTimes(1)
+    spyComplete.mockClear()
+  });
+
+  test('should NOT throw custom error by calling complete methode with empty data', async () => {
+    const spyComplete = jest.spyOn(csvBuilder, 'builder')
+    expect(() => csvBuilder.complete({
+      data: [],
+      errors: []
+    })).not.toThrowError("ERR")
+    expect(spyComplete).toBeCalledTimes(1)
+    spyComplete.mockClear()
   });
 
 })
