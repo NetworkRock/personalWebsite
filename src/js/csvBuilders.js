@@ -170,17 +170,18 @@ export class CSVBuilder {
     parse(this.fileURL, {
       header: true,
       download: true,
-      complete: (parseResult) => {
-        /**
-         * @param {CV | Project | Skill[]} data
-         */
-        const { data, errors, meta } = parseResult
-        if (errors.length) {
-          console.warn(meta)
-          console.error(errors)
-        }
-        this.builder(data)
-      }
+      complete: (parseResult) => this.complete(parseResult)
     });
   }
+
+ complete(parseResult) {
+    /**
+     * @param {CV | Project | Skill[]} data
+     */
+    if (parseResult && parseResult.errors.length) {
+      throw new Error(parseResult.errors[0].message)
+    }
+    this.builder(parseResult.data)
+  }
+
 }
