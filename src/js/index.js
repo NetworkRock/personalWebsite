@@ -17,7 +17,7 @@ import { Typewriter } from "./Typewriter";
 import { skillCirclesCSSClasses } from "./models/SkillCardGrid";
 
 // Navigation Links Key Map
-const navigationLinks = {
+export const navigationLinks = {
   "#welcome": $("#welcomeLink"),
   "#profile": $("#profileLink"),
   "#skill": $("#skillLink"),
@@ -28,7 +28,7 @@ const navigationLinks = {
  * Triggers on each onload of the website
  * @function init
  */
-function init() {
+export function init() {
   const projectBuilder = new CSVBuilder.ProjectBuilder()
   const cvBuilder = new CSVBuilder.CVBuilder()
   const skillBuilder = new CSVBuilder.SkillBuilder()
@@ -48,28 +48,25 @@ export function locationHashChanged() {
       (linkElement) => linkElement === location.hash
     )
   ]
-
+ 
   if (currentLocation) {
     removeStartAnimation()
-    scrollAfterReload(currentLocation)
-    toggleCircleAnimation(currentLocation)
-    toggleNavigationLink(currentLocation)
+    if (currentLocation.attr('onclick') === undefined) {
+      window.location = currentLocation.attr('href');
+    } else {
+      currentLocation.click();
+    }
+    skillCirclesCSSClasses.forEach((circleElement) => {
+      for (var i = 0; i < circleElement.length; i++) {
+        currentLocation.attr('id') === "skillLink" ? circleElement[i].classList.add("circle-animation") : circleElement[i].classList.remove("circle-animation");
+      }
+    });
+    Object.values(navigationLinks).forEach((linkElement) => {
+      currentLocation === linkElement ? linkElement.addClass("nav-link-active") : linkElement.removeClass("nav-link-active");
+    });
   } else {
     const typewriter = new Typewriter(["Hello, I am Robin", "I'm a software professional"], $("#welcome-headline"))
     typewriter.writing()
-  }
-}
-
-/**
- * Scrolls to the position especially in the case the site
- * gets reloaded with a specific location
- * @function scrollAfterReload
- */
-function scrollAfterReload(currentLocation) {
-  if (currentLocation.attr('onclick') === undefined) {
-    document.location = currentLocation.attr('href');
-  } else {
-    currentLocation.click();
   }
 }
 
@@ -84,30 +81,6 @@ function removeStartAnimation() {
   $('#cursor').css("opacity", 0);
   $('#navbar').css("opacity", 1);
 }
-
-/**
- * Toggles the circle animation that on each time the skill screen is reached
- * the circle animation starts again
- * @function toggleCircleAnimation
- */
-function toggleCircleAnimation(currentLocation) {
-  skillCirclesCSSClasses.forEach((circleElement) => {
-    for (var i = 0; i < circleElement.length; i++) {
-      currentLocation.attr('id') === "skillLink" ? circleElement[i].classList.add("circle-animation") : circleElement[i].classList.remove("circle-animation");
-    }
-  });
-}
-
-/**
- * Toggles the navigation links on each location change and set the active css class for it
- * @function toggleNavigationLink
- */
-function toggleNavigationLink(currentLocation) {
-  Object.values(navigationLinks).forEach((linkElement) => {
-    currentLocation === linkElement ? linkElement.addClass("nav-link-active") : linkElement.removeClass("nav-link-active");
-  });
-}
-
 
 window.onhashchange = locationHashChanged
 window.onload = init

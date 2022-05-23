@@ -11,7 +11,6 @@ describe('CSVBuilder', () => {
   beforeEach(() => {
     csvBuilder = new CSVBuilder('', build)
     spyBuild = jest.spyOn(csvBuilder, 'build')
-    csvBuilder.build()
   })
 
   afterEach(() => {
@@ -36,6 +35,7 @@ describe('CSVBuilder', () => {
       errors: []
     })).not.toThrowError("ERR")
     expect(spyComplete).toBeCalledTimes(1)
+    expect(spyComplete).toBeCalledWith([])
     spyComplete.mockClear()
   });
 
