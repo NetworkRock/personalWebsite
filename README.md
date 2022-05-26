@@ -11,7 +11,7 @@ Persons who review or just look into the code base of this project should be abl
 
 Languages     | Styling |   Build   |  Testing   | Documentation | Version tool |
 ------------- |-------- | --------- | ---------- | ------------- | ------------ |
-HTML          |CSS      |Webpack    |  MockaJS   | JSDoc         | Git
+HTML          |CSS      |Webpack    |  Jest      | JSDoc         | Git
 JavaScript    |
 JQuery        |
 
